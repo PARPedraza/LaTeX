@@ -12,18 +12,18 @@ Ejemplo de lista y cita bibliográfica ficticia:
 
 Ejemplo de cita en formato LaTeX:
 
-\citep{Gonzalez2025}
+\citep{Pedraza2025}
 
 Y en el archivo .bib se agregaría una entrada como:
 
-@article{Gonzalez2025,
-  author  = {González, María},
-  title   = {El impacto de LaTeX en la redacción académica},
-  journal = {Revista de Escritura Científica},
-  year    = {2025},
-  volume  = {12},
-  pages   = {45--52}
-}
+		@article{Pedraza2025,
+			author  = {Pedraza, María},
+			title   = {El impacto de LaTeX en la redacción académica},
+			journal = {Revista de Escritura Científica},
+			year    = {2025},
+			volume  = {12},
+			pages   = {45--52}
+		}
 
 ------------------------------------------------------------
 Observaciones:
