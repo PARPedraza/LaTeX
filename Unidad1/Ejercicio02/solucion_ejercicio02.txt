@@ -1,0 +1,48 @@
+------------------------------------------------------------
+SOLUCIÓN — Ejercicio 02: Comparación práctica
+------------------------------------------------------------
+
+Objetivo:
+Comprender las diferencias entre un procesador de texto 
+tradicional (WYSIWYG) y el sistema estructurado de LaTeX.
+
+------------------------------------------------------------
+1. Procesador de texto tradicional (WYSIWYG)
+------------------------------------------------------------
+
+En programas como Word o Google Docs, el usuario aplica 
+negritas, cursivas o estilos directamente con botones.  
+El formato depende de la versión del software y del sistema 
+operativo, por lo que los resultados pueden variar.
+
+Ejemplo visual:
+“LaTeX es un sistema útil para crear documentos técnicos 
+y científicos de alta calidad.”
+
+Ventaja: vista inmediata del formato.
+Desventaja: difícil mantener consistencia en documentos largos.
+
+------------------------------------------------------------
+2. Documento equivalente en LaTeX
+------------------------------------------------------------
+
+\documentclass{article}
+\begin{document}
+\textbf{\LaTeX} es un sistema útil para crear documentos 
+técnicos y científicos de alta calidad.
+\end{document}
+
+En LaTeX, el autor define la estructura mediante comandos.
+El formato final es generado por el compilador, garantizando
+uniformidad y control tipográfico.
+
+------------------------------------------------------------
+Conclusión
+------------------------------------------------------------
+
+LaTeX separa el contenido del formato, permitiendo reproducir
+documentos idénticos en cualquier equipo o sistema.  
+Mientras los procesadores WYSIWYG priorizan la apariencia 
+inmediata, LaTeX prioriza la coherencia y la calidad tipográfica.
+
+------------------------------------------------------------
