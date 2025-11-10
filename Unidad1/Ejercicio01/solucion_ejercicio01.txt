@@ -1,0 +1,16 @@
+------------------------------------------------------------
+SOLUCIÓN — Ejercicio 01: Reflexión inicial
+------------------------------------------------------------
+
+Una posible respuesta podría ser:
+
+LaTeX permite escribir documentos técnicos con una apariencia profesional y uniforme sin preocuparse por el formato.  
+A diferencia de los procesadores de texto tradicionales, organiza el contenido mediante estructuras lógicas que facilitan la inclusión de ecuaciones, tablas y referencias cruzadas.  
+Esto ahorra tiempo y asegura consistencia en trabajos largos como tesis, artículos o manuales.
+
+------------------------------------------------------------
+Observaciones:
+✔ No es necesario instalar ningún programa todavía.  
+✔ La idea principal es comprender cómo LaTeX separa el contenido del diseño.  
+✔ En las siguientes secciones aprenderás a crear este tipo de documentos paso a paso.
+------------------------------------------------------------
