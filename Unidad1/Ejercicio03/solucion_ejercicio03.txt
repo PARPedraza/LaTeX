@@ -1,0 +1,33 @@
+------------------------------------------------------------
+SOLUCIÓN — Ejercicio 03: Ventajas de LaTeX
+------------------------------------------------------------
+
+Ejemplo de lista y cita bibliográfica ficticia:
+
+1. Genera documentos con calidad tipográfica profesional.  
+2. Facilita la gestión de bibliografía y referencias cruzadas.  
+3. Es multiplataforma y gratuito.  
+4. Permite automatizar tablas, índices y ecuaciones complejas.  
+5. Es ideal para artículos científicos, tesis y libros técnicos.
+
+Ejemplo de cita en formato LaTeX:
+
+\citep{Gonzalez2025}
+
+Y en el archivo .bib se agregaría una entrada como:
+
+@article{Gonzalez2025,
+  author  = {González, María},
+  title   = {El impacto de LaTeX en la redacción académica},
+  journal = {Revista de Escritura Científica},
+  year    = {2025},
+  volume  = {12},
+  pages   = {45--52}
+}
+
+------------------------------------------------------------
+Observaciones:
+✔ Practicar el formato de citas con el comando \citep{}.  
+✔ Familiarizarse con la estructura de entradas bibliográficas en BibTeX.  
+✔ Reconocer las ventajas prácticas de LaTeX en la escritura científica.
+------------------------------------------------------------
