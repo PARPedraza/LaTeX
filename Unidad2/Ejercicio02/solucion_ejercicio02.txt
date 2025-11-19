@@ -1,0 +1,44 @@
+Ejercicio 02 — Configurando tu editor
+
+Para completar este ejercicio, selecciona un editor (local u online) y realiza
+una primera compilación exitosa de un documento mínimo.
+
+---------------------------------------------------
+1. Elegir un editor
+---------------------------------------------------
+Puedes seleccionar cualquiera de los siguientes:
+
+• TeXstudio (Windows, Linux, macOS)
+• VS Code con la extensión “LaTeX Workshop”
+• TeXworks (opción ligera)
+• Overleaf (editor online)
+
+El editor no afecta el resultado; todos producen el mismo PDF.
+
+---------------------------------------------------
+2. Crear un documento mínimo
+---------------------------------------------------
+En tu editor, crea un archivo llamado main.tex con el contenido:
+
+    \documentclass{article}
+    \begin{document}
+    ¡Hola, LaTeX!
+    \end{document}
+
+Guarda el archivo en una carpeta nueva para evitar errores de rutas.
+
+---------------------------------------------------
+3. Compilar el documento
+---------------------------------------------------
+• En TeXstudio: presiona F5 o el botón “Compilar”.
+• En VS Code: usa el comando “Build LaTeX project”.
+• En TeXworks: selecciona “pdfLaTeX” y presiona compilar.
+• En Overleaf: la compilación es automática.
+
+---------------------------------------------------
+4. Verificar el resultado
+---------------------------------------------------
+Si se generó un archivo PDF con el texto “¡Hola, LaTeX!”,
+entonces tu editor está correctamente configurado y listo para usarse.
+
+La práctica está completa.
