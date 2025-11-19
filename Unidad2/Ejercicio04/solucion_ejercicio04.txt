@@ -1,0 +1,47 @@
+Ejercicio 04 — Verificando tu instalación
+
+El objetivo de este ejercicio es comprobar que tu distribución de LaTeX
+(MiKTeX, TeX Live o MacTeX) y tu editor están funcionando correctamente
+al compilar un documento que incluya distintos elementos.
+
+---------------------------------------------------
+1. Crear el documento mínimo
+---------------------------------------------------
+En tu editor, crea un archivo con el siguiente contenido:
+
+    \documentclass{article}
+    \usepackage{graphicx}
+    \begin{document}
+
+    Aquí insertamos una ecuación sencilla:
+    \[
+        E = mc^2
+    \]
+
+    A continuación insertamos una imagen:
+    \includegraphics[width=0.4\textwidth]{imagen.jpg}
+
+    \end{document}
+
+Asegúrate de que la imagen exista en tu carpeta de trabajo
+y que el nombre coincida exactamente (sin acentos ni espacios).
+
+---------------------------------------------------
+2. Compilar el documento
+---------------------------------------------------
+• En TeXstudio: presiona F5 o el botón “Compilar”.  
+• En VS Code: usa la opción “Build LaTeX project”.  
+• En TeXworks: selecciona “pdfLaTeX” y compila.  
+• En Overleaf: la compilación es automática.
+
+---------------------------------------------------
+3. Verificar el resultado
+---------------------------------------------------
+La instalación es correcta si:
+
+• La ecuación se muestra centrada y sin errores.  
+• La imagen aparece en el PDF con el tamaño indicado.  
+• No aparecen mensajes como “File not found” o “Undefined control sequence”.  
+
+Si ambos elementos se muestran correctamente, tu entorno LaTeX está
+funcionando de manera completa y ya puedes continuar con el resto del curso.
