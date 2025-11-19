@@ -1,26 +1,44 @@
 Ejercicio 01 — Verificando tu distribución
 
-Para verificar la versión de tu distribución LaTeX, usa los siguientes comandos:
+Para confirmar que tu distribución de LaTeX está instalada correctamente, realiza los siguientes pasos según tu sistema operativo:
 
-• TeX Live:
-    tlmgr --version
+---------------------------------------------------
+1. Windows (MiKTeX)
+---------------------------------------------------
+• Abre “MiKTeX Console”.
+• En la pestaña “Packages” verifica que se muestra la lista completa de paquetes.
+• En la pestaña “Updates”, revisa si hay actualizaciones disponibles.
+• Si MiKTeX abre correctamente y detecta paquetes, la instalación está funcionando.
 
-• MiKTeX:
-    Abrir MiKTeX Console → pestaña “Settings” → revisar versión
+---------------------------------------------------
+2. macOS (MacTeX)
+---------------------------------------------------
+• Abre la aplicación “TeX Live Utility”.
+• Si la lista de paquetes y actualizaciones aparece sin errores, tu distribución está activa.
+• También puedes abrir “TeXShop” y compilar un documento mínimo para comprobarlo.
 
-• MacTeX:
-    tex --version
+---------------------------------------------------
+3. Linux (TeX Live)
+---------------------------------------------------
+• Abre tu editor de LaTeX (VS Code, TeXstudio, etc.).
+• Compila un documento mínimo.
+• Si no hay errores de “paquete no encontrado”, la instalación está completa.
 
-Para instalar un paquete faltante como ‘booktabs’ o ‘siunitx’, puedes usar:
+---------------------------------------------------
+Verificar instalación de un paquete (booktabs o siunitx)
+---------------------------------------------------
+Escribe un documento que incluya:
 
-• TeX Live:
-    tlmgr install booktabs
-    tlmgr install siunitx
+    \usepackage{booktabs}
+    \usepackage{siunitx}
 
-• MiKTeX:
-    Los paquetes se instalarán automáticamente al compilar un documento que los requiera.
+y compílalo.
 
-• MacTeX:
-    Usar la aplicación “TeX Live Utility”.
+Si tu distribución está bien instalada:
 
-Finalmente, compila un documento que use alguno de estos paquetes para confirmar que la instalación fue exitosa.
+• En MiKTeX: los paquetes se descargarán automáticamente si faltan.  
+• En TeX Live: ya deberían estar incluidos o se podrán instalar fácilmente desde su gestor.  
+• En MacTeX: TeX Live Utility mostrará si requiere actualizar algo.
+
+Si el documento compila sin errores relacionados con estos paquetes, la verificación está completa.
+
