@@ -1,0 +1,49 @@
+Ejercicio 03 — Insertando imágenes e hipervínculos
+
+El objetivo de este ejercicio es aprender a cargar paquetes en el
+preámbulo y verificar que los hipervínculos funcionen correctamente
+en el PDF final.
+
+---------------------------------------------------
+1. Agregar los paquetes
+---------------------------------------------------
+En el preámbulo de tu documento, escribe:
+
+    \usepackage{graphicx}
+    \usepackage{hyperref}
+
+Estos dos paquetes permiten insertar imágenes e hipervínculos.
+
+---------------------------------------------------
+2. Crear contenido de prueba
+---------------------------------------------------
+Dentro del entorno "document", agrega:
+
+1. Un enlace:
+
+    \href{https://www.latex-project.org}{Sitio oficial de LaTeX}
+
+2. (Opcional) Una imagen:
+
+    \includegraphics[width=0.4\textwidth]{imagen.jpg}
+
+Asegúrate de que la imagen exista en tu carpeta si decides incluirla.
+
+---------------------------------------------------
+3. Compilar el documento
+---------------------------------------------------
+Genera el PDF desde tu editor.
+
+En Overleaf la compilación será automática.
+En TeXstudio, VS Code o TeXworks debes iniciar la compilación manualmente.
+
+---------------------------------------------------
+4. Verificar los hipervínculos
+---------------------------------------------------
+En el PDF final:
+
+• El enlace debe aparecer subrayado o coloreado.  
+• Al hacer clic, debe abrirse la página web en tu navegador.  
+
+Si esto ocurre, el ejercicio está completo y el paquete "hyperref"
+funciona correctamente en tu instalación.
