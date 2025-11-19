@@ -1,0 +1,26 @@
+Ejercicio 01 — Verificando tu distribución
+
+Para verificar la versión de tu distribución LaTeX, usa los siguientes comandos:
+
+• TeX Live:
+    tlmgr --version
+
+• MiKTeX:
+    Abrir MiKTeX Console → pestaña “Settings” → revisar versión
+
+• MacTeX:
+    tex --version
+
+Para instalar un paquete faltante como ‘booktabs’ o ‘siunitx’, puedes usar:
+
+• TeX Live:
+    tlmgr install booktabs
+    tlmgr install siunitx
+
+• MiKTeX:
+    Los paquetes se instalarán automáticamente al compilar un documento que los requiera.
+
+• MacTeX:
+    Usar la aplicación “TeX Live Utility”.
+
+Finalmente, compila un documento que use alguno de estos paquetes para confirmar que la instalación fue exitosa.
