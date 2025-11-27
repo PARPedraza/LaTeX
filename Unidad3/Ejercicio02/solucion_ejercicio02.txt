@@ -1,0 +1,45 @@
+===========================
+EJERCICIO 02 - UNIDAD 3
+Sangría y espacios en LaTeX
+===========================
+
+Este ejercicio muestra cómo controlar el espaciado y la sangría
+en párrafos utilizando comandos básicos de LaTeX.
+
+El proyecto puede resolverse con un solo archivo (main.tex).
+
+----------------------------------------
+Archivo: main.tex
+----------------------------------------
+
+\documentclass[12pt]{article}
+
+\begin{document}
+
+% Párrafo 1: sin sangría
+\noindent
+Este es el primer párrafo del ejercicio. Se ha eliminado la sangría
+inicial usando el comando \noindent. Observa cómo el texto comienza
+directamente al margen izquierdo.
+
+% Espaciado entre párrafos (dejado de forma natural)
+  
+% Párrafo 2: con sangría automática
+Este es el segundo párrafo. Aquí se utiliza la sangría predeterminada
+que maneja LaTeX para cada nuevo párrafo.
+
+% Párrafo 3: con espacio horizontal manual
+\hspace{1cm}
+Este es el tercer párrafo. Inicia con un espacio horizontal de 1 cm
+gracias al comando \hspace{1cm}. Compáralo con los dos anteriores.
+
+\end{document}
+
+----------------------------------------
+
+INSTRUCCIONES:
+1. Copia el contenido en un archivo llamado main.tex.
+2. Compílalo usando cualquier editor de LaTeX.
+3. Observa las diferencias en la sangría y espaciado de cada párrafo.
+
+FIN DEL EJERCICIO 02 – UNIDAD 3
