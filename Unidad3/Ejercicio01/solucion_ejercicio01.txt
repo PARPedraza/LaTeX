@@ -1,0 +1,44 @@
+===========================
+EJERCICIO 01 - UNIDAD 3
+Estructura mínima del proyecto
+===========================
+
+El proyecto se compone de tres archivos:
+
+----------------------------------------
+1. main.tex  (documento principal)
+----------------------------------------
+
+\documentclass[12pt]{article}
+
+\begin{document}
+
+\input{intro}
+\input{cap1}
+
+\end{document}
+
+----------------------------------------
+2. intro.tex  (primer archivo incluido)
+----------------------------------------
+
+\section{Introducción}
+Este es el contenido del archivo intro.tex.
+Aquí puedes escribir tu texto de presentación.
+
+----------------------------------------
+3. cap1.tex  (segundo archivo incluido)
+----------------------------------------
+
+\section{Capítulo 1}
+Este archivo corresponde al primer capítulo del documento.
+Puedes escribir contenido adicional aquí.
+
+----------------------------------------
+
+INSTRUCCIONES:
+1. Guarda los tres archivos en la misma carpeta.
+2. Compila "main.tex" con cualquier editor de LaTeX.
+3. Verifica que ambos archivos incluidos aparecen en el PDF.
+
+FIN DEL EJERCICIO 01 – UNIDAD 3
