@@ -1,0 +1,63 @@
+===========================
+EJERCICIO 03 - UNIDAD 3
+Flotantes y saltos de página en LaTeX
+===========================
+
+Este ejercicio muestra cómo LaTeX gestiona las figuras (flotantes)
+cuando se inserta un salto de página mediante el comando \clearpage.
+
+----------------------------------------
+Archivo: main.tex
+----------------------------------------
+
+\documentclass[12pt]{article}
+\usepackage{graphicx}   % Necesario para insertar imágenes
+
+\begin{document}
+
+\section{Ejemplo de flotantes y salto con clearpage}
+
+Este ejemplo contiene dos figuras separadas por un comando \clearpage.
+Compila el documento y observa dónde aparecen las figuras en el PDF.
+
+% -----------------------------
+% Primera figura
+% -----------------------------
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=5cm]{figura1.jpg}
+    \caption{Primera figura de ejemplo}
+\end{figure}
+
+% Salto de página que fuerza la impresión de flotantes pendientes
+\clearpage
+
+% -----------------------------
+% Segunda figura
+% -----------------------------
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=5cm]{figura2.jpg}
+    \caption{Segunda figura después del clearpage}
+\end{figure}
+
+\end{document}
+
+----------------------------------------
+NOTAS IMPORTANTES:
+----------------------------------------
+1. Puedes usar cualquier imagen con los nombres:
+      - figura1.jpg
+      - figura2.jpg
+   o reemplazarlas por imágenes propias.
+
+2. El comando \clearpage obliga a LaTeX a:
+      - imprimir todos los flotantes pendientes,
+      - iniciar una nueva página.
+
+3. Observa cómo la primera figura se coloca antes del salto,
+   incluso si LaTeX quería moverla más adelante.
+
+4. La segunda figura aparece normalmente después del clearpage.
+
+FIN DEL EJERCICIO 03 – UNIDAD 3
