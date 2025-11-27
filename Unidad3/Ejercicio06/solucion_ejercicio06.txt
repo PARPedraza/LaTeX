@@ -1,0 +1,66 @@
+===========================
+EJERCICIO 06 - UNIDAD 3
+Saltos de página y encabezados (fancyhdr)
+===========================
+
+Este ejercicio muestra cómo interactúan los saltos de página con los
+encabezados y pies personalizados mediante el paquete fancyhdr.
+
+El ejercicio se puede resolver con un solo archivo: main.tex
+
+----------------------------------------
+Archivo: main.tex
+----------------------------------------
+
+\documentclass[12pt]{article}
+
+\usepackage{fancyhdr}   % Paquete para encabezados y pies
+
+% Configuración de encabezados y pies
+\pagestyle{fancy}
+\fancyhf{} % Limpia encabezados y pies
+
+% Encabezados (L = izquierda, C = centro, R = derecha)
+\fancyhead[L]{Ejercicio 06 - Unidad 3}
+\fancyhead[R]{Página \thepage}
+
+% Pie de página centrado
+\fancyfoot[C]{Documento de ejemplo con fancyhdr}
+
+\begin{document}
+
+\section*{Página 1}
+Este es el contenido de la primera página del documento.
+Observa el encabezado y el pie de página personalizados.
+
+% Salto de página forzado
+\newpage
+
+\section*{Página 2}
+Esta es la segunda página del documento.
+Verifica cómo LaTeX actualiza automáticamente:
+- el número de página en los encabezados,
+- el título superior,
+- el pie de página definido con fancyhdr.
+
+\end{document}
+
+----------------------------------------
+INSTRUCCIONES:
+----------------------------------------
+1. Copia el contenido anterior en un archivo llamado main.tex.
+2. Compila el documento.
+3. Observa los detalles siguientes:
+   - El encabezado cambia de número de página tras el salto (Página 1 → Página 2).
+   - El pie de página permanece igual en todas las páginas.
+   - El salto \newpage garantiza que el contenido siguiente comience en una nueva página.
+
+----------------------------------------
+NOTAS:
+----------------------------------------
+- \fancyhf{} borra encabezados y pies antes de personalizarlos.
+- \fancyhead y \fancyfoot permiten definir izquierda, centro y derecha.
+- Puedes modificar el estilo global cambiando \pagestyle{fancy} por otros estilos.
+- Para páginas específicas (como la portada), se usa \thispagestyle{empty}.
+
+FIN DEL EJERCICIO 06 – UNIDAD 3
