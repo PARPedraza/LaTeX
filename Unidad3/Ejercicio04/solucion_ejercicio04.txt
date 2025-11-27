@@ -1,0 +1,70 @@
+===========================
+EJERCICIO 04 - UNIDAD 3
+Explorando clases de documento
+===========================
+
+Este ejercicio demuestra las diferencias entre las clases
+de documento "article" y "report" en LaTeX, especialmente
+en lo referente al soporte para capítulos.
+
+----------------------------------------
+Archivo: main_article.tex
+----------------------------------------
+
+% Ejemplo usando la clase "article"
+\documentclass{article}
+
+\begin{document}
+
+\section{Introducción}
+En la clase "article" no existe el comando \chapter. 
+Los documentos se organizan principalmente con secciones,
+subsecciones y subsubsecciones.
+
+\section{Segundo apartado}
+El documento mantiene un flujo continuo sin separación por capítulos.
+
+\end{document}
+
+----------------------------------------
+Archivo: main_report.tex
+----------------------------------------
+
+% Ejemplo usando la clase "report"
+\documentclass{report}
+
+\begin{document}
+
+\chapter{Introducción}
+En la clase "report" sí se pueden utilizar capítulos.
+Esto permite estructurar documentos más largos.
+
+\section{Primer apartado}
+Los capítulos generan saltos de página y encabezados propios.
+
+\chapter{Segundo capítulo}
+Cada capítulo inicia en una nueva página.
+
+\end{document}
+
+----------------------------------------
+INSTRUCCIONES:
+----------------------------------------
+1. Compila primero "main_article.tex".
+2. Compila después "main_report.tex".
+3. Observa las diferencias principales:
+
+   - La clase "article" NO permite usar \chapter.
+   - La clase "report" SÍ lo permite.
+   - Cada \chapter crea una página nueva automáticamente.
+   - Los encabezados y la estructura visual cambian según la clase.
+   - La organización del documento es más jerárquica en "report".
+
+----------------------------------------
+
+RECOMENDACIÓN:
+Usa "article" para documentos cortos (tareas, artículos).
+Usa "report" para documentos más extensos con capítulos
+(informes, tesis, prácticas largas).
+
+FIN DEL EJERCICIO 04 – UNIDAD 3
