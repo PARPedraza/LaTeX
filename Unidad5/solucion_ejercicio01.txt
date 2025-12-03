@@ -1,0 +1,47 @@
+===========================
+EJERCICIO 01 – UNIDAD 5
+Modo matemático en línea y en bloque
+===========================
+
+Este ejercicio muestra la diferencia entre el modo matemático en línea
+y el modo matemático en bloque en LaTeX.
+
+----------------------------------------
+Archivo: main.tex
+----------------------------------------
+
+\documentclass[12pt]{article}
+
+\begin{document}
+
+\section*{Modo matem\'atico en l\'inea y en bloque}
+
+Un ejemplo de expresi\'on matem\'atica en l\'inea es:
+al considerar el teorema de Pit\'agoras, tenemos que 
+$ a^2 + b^2 = c^2 $ para un tri\'angulo rect\'angulo.
+
+Ahora, la misma expresi\'on en modo bloque se puede escribir como:
+
+\[
+a^2 + b^2 = c^2
+\]
+
+La versi\'on en l\'inea se usa cuando la f\'ormula forma parte de una
+oraci\'on y no interrumpe significativamente el flujo del texto.
+En cambio, el modo en bloque es preferible cuando la ecuaci\'on es 
+relevante, se desea destacarla o cuando la expresi\'on es m\'as larga
+y necesita espacio propio para mantener la legibilidad.
+
+\end{document}
+
+----------------------------------------
+INSTRUCCIONES:
+----------------------------------------
+1. Copia este contenido en un archivo llamado main.tex.
+2. Compila el documento con tu editor de LaTeX.
+3. Observa:
+   - c\'omo la expresi\'on en l\'inea se integra en el p\'arrafo,
+   - c\'omo la expresi\'on en bloque aparece centrada y aislada,
+   - en qu\'e casos resulta m\'as clara cada presentaci\'on.
+
+FIN DEL EJERCICIO 01 – UNIDAD 5
