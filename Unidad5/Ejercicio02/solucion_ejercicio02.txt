@@ -1,0 +1,78 @@
+===========================
+EJERCICIO 02 – UNIDAD 5
+Uso de símbolos griegos y matemáticos
+===========================
+
+Este ejercicio presenta cinco ecuaciones que incorporan diversos 
+símbolos matemáticos y letras griegas disponibles en LaTeX.
+
+----------------------------------------
+Archivo: main.tex
+----------------------------------------
+
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\section*{Uso de símbolos griegos y matemáticos}
+
+A continuación se muestran cinco ecuaciones que emplean símbolos como
+$\alpha, \beta, \pi, \mathbb{R}, \nabla, \Omega, \forall, \exists$.
+
+% ---------------------------------------------------------
+% 1. Ecuación con alfa y beta
+% ---------------------------------------------------------
+\[
+\alpha + \beta = \pi
+\]
+
+% ---------------------------------------------------------
+% 2. Ecuación con conjunto de los reales
+% ---------------------------------------------------------
+\[
+f : \mathbb{R} \to \mathbb{R}, \qquad f(x) = x^2 + 1
+\]
+
+% ---------------------------------------------------------
+% 3. Condición lógica con cuantificadores
+% ---------------------------------------------------------
+\[
+\forall x \in \mathbb{R},\ \exists y \in \mathbb{R} \text{ tal que } y = x + 1
+\]
+
+% ---------------------------------------------------------
+% 4. Operador nabla aplicado a un campo escalar
+% ---------------------------------------------------------
+\[
+\nabla \phi = 
+\left(
+\frac{\partial \phi}{\partial x},
+\frac{\partial \phi}{\partial y},
+\frac{\partial \phi}{\partial z}
+\right)
+\]
+
+% ---------------------------------------------------------
+% 5. Ecuación con símbolo Omega y pertenencia
+% ---------------------------------------------------------
+Sea $\Omega \subset \mathbb{R}^2$ un dominio; entonces:
+\[
+x \in \Omega \Rightarrow \|x\| \ge 0.
+\]
+
+\end{document}
+
+----------------------------------------
+INSTRUCCIONES:
+----------------------------------------
+1. Copia este contenido en un archivo llamado main.tex.
+2. Compila con cualquier editor \LaTeX.
+3. Observa cómo cada símbolo se representa correctamente:
+   - Letras griegas ($\alpha, \beta, \pi$),
+   - Conjuntos numéricos ($\mathbb{R}$),
+   - Cuantificadores ($\forall, \exists$),
+   - Operadores vectoriales ($\nabla$),
+   - Símbolos de pertenencia y lógica ($\in, \Rightarrow$).
+
+FIN DEL EJERCICIO 02 – UNIDAD 5
