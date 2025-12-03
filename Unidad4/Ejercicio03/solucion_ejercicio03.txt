@@ -1,0 +1,73 @@
+===========================
+EJERCICIO 03 – UNIDAD 4
+Tabla con booktabs y siunitx
+===========================
+
+Este ejercicio muestra cómo construir una tabla profesional usando:
+- reglas de booktabs (\toprule, \midrule, \bottomrule),
+- una columna numérica alineada con el tipo S de siunitx,
+- un ejemplo con \multicolumn dentro del entorno table.
+
+----------------------------------------
+Archivo: main.tex
+----------------------------------------
+
+\documentclass[12pt]{article}
+
+\usepackage{booktabs}   % Reglas tipográficas para tablas profesionales
+\usepackage{siunitx}    % Alineación y formato numérico
+
+% Configuración básica de siunitx (opcional)
+\sisetup{
+    round-mode=places,
+    round-precision=2
+}
+
+\begin{document}
+
+\section*{Ejemplo de tabla con booktabs y siunitx}
+
+En la Tabla~\ref{tab:categorias_valores} se muestra un ejemplo de
+tabla con tres columnas: Categoría, Descripción y Valor numérico.
+
+\begin{table}[h]
+    \centering
+    % Columna 1: texto alineado a la izquierda (l)
+    % Columna 2: texto alineado a la izquierda (l)
+    % Columna 3: valores numéricos alineados con S de siunitx
+    \begin{tabular}{l l S}
+        \toprule
+        \multicolumn{2}{c}{\textbf{Información}} & \textbf{Valor} \\
+        \cmidrule(r){1-2}
+        \textbf{Categoría} & \textbf{Descripción} & {Valor} \\
+        \midrule
+        A & Parámetro inicial                  & 10.5  \\
+        B & Resultado intermedio               &  3.25 \\
+        C & Medida final                       & 125.0 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Ejemplo de tabla con booktabs y una columna numérica alineada con siunitx.}
+    \label{tab:categorias_valores}
+\end{table}
+
+Como puede observarse, la columna de valores numéricos está alineada 
+de forma consistente, lo que mejora la lectura de los datos.
+
+\end{document}
+
+----------------------------------------
+INSTRUCCIONES:
+----------------------------------------
+1. Copia este contenido en un archivo llamado main.tex.
+2. Compila el documento con tu editor de LaTeX.
+3. Observa los siguientes aspectos:
+   - Las reglas \toprule, \midrule y \bottomrule crean líneas
+     limpias y con buen espaciado.
+   - La columna de valores (tipo S) alinea los números por su
+     punto decimal.
+   - La fila de encabezado "Información" usa \multicolumn{2}{c}{...}
+     para abarcar las dos primeras columnas.
+   - La tabla tiene un título (\caption) y puede referenciarse
+     en el texto mediante \ref{tab:categorias_valores}.
+
+FIN DEL EJERCICIO 03 – UNIDAD 4
