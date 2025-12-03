@@ -1,0 +1,79 @@
+===========================
+UNIDAD 6 – EJERCICIO 02
+Compilación de una bibliografía mínima
+===========================
+
+Este ejercicio muestra un flujo completo usando biblatex + biber
+con tres referencias citadas en un mismo párrafo.
+
+------------------------------------------------------------
+Archivo: referencias.bib
+------------------------------------------------------------
+
+@article{Garcia2021,
+  author    = {García, Laura and Hernández, Diego},
+  title     = {Redes neuronales profundas para clasificación de imágenes médicas},
+  journal   = {Revista Latinoamericana de Informática Biomédica},
+  year      = {2021},
+  volume    = {15},
+  number    = {1},
+  pages     = {23--40},
+}
+
+@book{Ruiz2018,
+  author    = {Ruiz, Marco Antonio},
+  title     = {Introducción a la escritura científica en LaTeX},
+  publisher = {TecnoEditores},
+  year      = {2018},
+  address   = {Ciudad de México},
+}
+
+@inproceedings{Santos2022,
+  author    = {Santos, Paula and López, Javier},
+  title     = {Aplicaciones de visión por computadora en agricultura de precisión},
+  booktitle = {Memorias del Congreso Iberoamericano de Tecnologías Inteligentes},
+  year      = {2022},
+  pages     = {101--110},
+  organization = {Sociedad Iberoamericana de Computación},
+}
+
+------------------------------------------------------------
+Archivo: main.tex
+------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage[backend=biber,style=authoryear]{biblatex}
+\addbibresource{referencias.bib}
+
+\begin{document}
+
+\section*{Bibliograf\'ia m\'inima con tres fuentes}
+
+En los últimos años se han desarrollado modelos cada vez más robustos
+para la clasificaci\'on de imágenes m\'edicas \parencite{Garcia2021},
+al mismo tiempo que se han consolidado buenas pr\'acticas para la
+redacci\'on de documentos científicos en \LaTeX{} \parencite{Ruiz2018}.
+De forma complementaria, las aplicaciones de visión por computadora
+se han extendido a la agricultura de precisi\'on y otros contextos
+productivos \parencite{Santos2022}.
+
+\printbibliography
+
+\end{document}
+
+------------------------------------------------------------
+FLUJO DE COMPILACIÓN (biblatex + biber)
+------------------------------------------------------------
+
+1. Ejecutar:    pdflatex main
+2. Ejecutar:    biber main
+3. Ejecutar:    pdflatex main
+4. Ejecutar:    pdflatex main
+
+Después del cuarto paso:
+
+- Las citas en el párrafo deben aparecer en formato autor–año.
+- La bibliografía al final debe listar las tres referencias del archivo referencias.bib.
+
+FIN DE LA SOLUCIÓN DEL EJERCICIO 02 – UNIDAD 6
