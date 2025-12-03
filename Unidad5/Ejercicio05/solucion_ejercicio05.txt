@@ -1,0 +1,58 @@
+===========================
+EJERCICIO 05 – UNIDAD 5
+Matriz y sistema de ecuaciones
+===========================
+
+Este ejercicio muestra cómo escribir una matriz 3×3 y un sistema
+de dos ecuaciones lineales usando entornos matemáticos formales
+en LaTeX.
+
+----------------------------------------
+Archivo: main.tex
+----------------------------------------
+
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\section*{Matriz $3 \times 3$ y sistema de ecuaciones}
+
+A continuaci\'on se presenta una matriz $3 \times 3$ usando el 
+entorno \texttt{pmatrix}:
+
+\[
+A =
+\begin{pmatrix}
+1 & 2 & 3 \\
+0 & -1 & 4 \\
+2 & 5 & 0
+\end{pmatrix}
+\]
+
+Ahora, consideramos el siguiente sistema de dos ecuaciones con dos
+inc\'ognitas, escrito mediante el entorno \texttt{cases}:
+
+\[
+\begin{cases}
+x + 2y = 5, \\
+3x - y = 4.
+\end{cases}
+\]
+
+Este sistema puede interpretarse como un par de rectas en el plano,
+cuyas soluciones corresponden a su punto de intersecci\'on.
+
+\end{document}
+
+----------------------------------------
+INSTRUCCIONES:
+----------------------------------------
+1. Copia este contenido en un archivo llamado main.tex.
+2. Compila el documento con tu editor de LaTeX.
+3. Verifica:
+   - que la matriz 3×3 aparezca con paréntesis,
+   - que el sistema de ecuaciones se muestre con una llave a la izquierda
+     y las dos ecuaciones bien alineadas.
+
+FIN DEL EJERCICIO 05 – UNIDAD 5
