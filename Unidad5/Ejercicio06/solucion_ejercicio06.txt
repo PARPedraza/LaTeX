@@ -1,0 +1,56 @@
+===========================
+EJERCICIO 06 – UNIDAD 5
+Definición y demostración con amsthm
+===========================
+
+Este ejercicio muestra cómo:
+- declarar un entorno "definition" con numeración por capítulo,
+- redactar una definición breve,
+- escribir una demostración usando el entorno proof.
+
+----------------------------------------
+Archivo: main.tex
+----------------------------------------
+
+\documentclass[12pt]{article}
+
+\usepackage{amsmath, amsthm}
+
+% Declaramos un entorno de definición numerado por capítulo
+\theoremstyle{definition}
+\newtheorem{definition}{Definici\'on}[chapter]
+
+\begin{document}
+
+\section*{Definici\'on y demostraci\'on}
+
+A continuaci\'on se muestra un ejemplo de definici\'on formal y una
+demostraci\'on breve usando el entorno \texttt{proof}.
+
+\begin{definition}[N\'umero primo]
+Un entero $p > 1$ se llama \emph{n\'umero primo} si sus \'unicos
+divisores positivos son $1$ y $p$.
+\end{definition}
+
+\begin{proof}
+Si $p$ es primo, por definici\'on no admite descomposici\'on como
+producto de dos enteros positivos menores que \'el mismo.  
+En efecto, si $p = a \cdot b$ con $a, b \in \mathbb{Z}^{+}$, entonces
+forzosamente $a = 1$ y $b = p$, o bien $a = p$ y $b = 1$.  
+Por tanto, los \'unicos divisores positivos de $p$ son $1$ y $p$.
+\end{proof}
+
+\end{document}
+
+----------------------------------------
+INSTRUCCIONES:
+----------------------------------------
+1. Copia este contenido en un archivo llamado main.tex.
+2. Compila el documento con tu editor de LaTeX.
+3. Observa:
+   - c\'omo se numera la definici\'on como “Definición 1.1”, “1.2”, etc.
+     (dependiendo del capítulo),
+   - c\'omo el entorno proof añade automáticamente la palabra “Demostración”
+     y el símbolo de cierre (cuadro) al final.
+
+FIN DEL EJERCICIO 06 – UNIDAD 5
