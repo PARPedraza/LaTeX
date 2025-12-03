@@ -1,0 +1,117 @@
+===========================
+UNIDAD 6 – EJERCICIO 04
+Bibliografía avanzada con biblatex
+===========================
+
+Este ejercicio muestra cómo:
+
+1. Añadir el campo "keywords" a cada entrada,
+2. Generar bibliografías parciales usando filtros (por tipo),
+3. Usar sorting=none para que el orden siga la secuencia de citación.
+
+------------------------------------------------------------
+Archivo: referencias.bib
+------------------------------------------------------------
+
+@article{Garcia2021,
+  author    = {García, Laura and Hernández, Diego},
+  title     = {Redes neuronales profundas para clasificación de imágenes médicas},
+  journal   = {Revista Latinoamericana de Informática Biomédica},
+  year      = {2021},
+  volume    = {15},
+  number    = {1},
+  pages     = {23--40},
+  keywords  = {medicina, deep learning},
+}
+
+@article{Santos2022,
+  author    = {Santos, Paula and López, Javier},
+  title     = {Aplicaciones de visión por computadora en agricultura de precisión},
+  journal   = {Revista de Tecnologías Inteligentes},
+  year      = {2022},
+  volume    = {9},
+  number    = {2},
+  pages     = {101--119},
+  keywords  = {agricultura, vision},
+}
+
+@book{Ruiz2018,
+  author    = {Ruiz, Marco Antonio},
+  title     = {Introducción a la escritura científica en LaTeX},
+  publisher = {TecnoEditores},
+  year      = {2018},
+  address   = {Ciudad de México},
+  keywords  = {latex, escritura},
+}
+
+------------------------------------------------------------
+Archivo: main.tex
+------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage[backend=biber,
+            style=authoryear,
+            sorting=none]{biblatex}
+
+\addbibresource{referencias.bib}
+
+\begin{document}
+
+\section*{Bibliograf\'ia avanzada con \texttt{biblatex}}
+
+En este documento citamos primero un art\'iculo del \'area m\'edica
+\parencite{Garcia2021}, despu\'es un art\'iculo de aplicaciones en
+agricultura de precisi\'on \parencite{Santos2022} y finalmente un libro
+introductorio sobre escritura cient\'ifica en \LaTeX{} \parencite{Ruiz2018}.
+
+\medskip
+A continuaci\'on se presentan bibliograf\'ias parciales separadas por tipo
+de documento.
+
+\subsection*{Art\'iculos}
+
+% Solo entradas de tipo "article"
+\printbibliography[type=article, title={Art\'iculos citados}]
+
+\subsection*{Libros}
+
+% Solo entradas de tipo "book"
+\printbibliography[type=book, title={Libros citados}]
+
+\end{document}
+
+------------------------------------------------------------
+COMENTARIOS SOBRE LA CONFIGURACIÓN
+------------------------------------------------------------
+
+1. El parámetro:
+       sorting=none
+   indica que el orden de la bibliografía sigue la secuencia de citación
+   en el texto, en lugar de ordenarse alfabéticamente por autor o por año.
+
+2. El campo "keywords" se agregó a cada entrada del archivo .bib.
+   En este ejemplo no se filtra por keyword, pero podría hacerse con:
+       \printbibliography[keyword=medicina]
+   o combinando filtros con "type" y "keyword".
+
+3. Las dos bibliografías parciales:
+   - "Artículos citados": muestra solo las entradas de tipo @article.
+   - "Libros citados": muestra solo las entradas de tipo @book.
+
+------------------------------------------------------------
+FLUJO DE COMPILACIÓN
+------------------------------------------------------------
+
+1. Ejecutar:    pdflatex main
+2. Ejecutar:    biber main
+3. Ejecutar:    pdflatex main
+4. Ejecutar:    pdflatex main
+
+Tras la compilación:
+
+- Las citas en el texto aparecerán en formato autor–año,
+- La primera lista de referencias (Artículos) incluirá solo las entradas @article,
+- La segunda lista (Libros) incluirá únicamente la entrada @book.
+
+FIN DE LA SOLUCIÓN DEL EJERCICIO 04 – UNIDAD 6
