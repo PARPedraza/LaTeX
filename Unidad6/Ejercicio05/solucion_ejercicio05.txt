@@ -1,0 +1,161 @@
+===========================
+UNIDAD 6 – EJERCICIO 05
+Limpieza y verificación de bibliografía
+===========================
+
+Este ejercicio ejemplifica cómo:
+
+1. Detectar y eliminar referencias duplicadas,
+2. Normalizar nombres de autores,
+3. Completar campos bibliográficos importantes,
+4. Clasificar entradas usando el campo "keywords",
+5. Verificar advertencias de biber tras la compilación.
+
+A continuación se muestra un archivo .bib "antes" y su versión "después"
+de aplicar las buenas prácticas.
+
+------------------------------------------------------------
+Archivo original: referencias.bib (versión desordenada)
+------------------------------------------------------------
+
+@article{garcia2021,
+  author  = {L. Garcia and D. HERNANDEZ},
+  title   = {Redes neuronales profundas para clasificación de imágenes médicas},
+  journal = {Revista Latinoamericana de Informatica Biomedica},
+  year    = {2021}
+}
+
+@article{Garcia2021b,
+  author    = {García, Laura and Hernández, Diego},
+  title     = {Redes neuronales profundas para clasificación de imágenes médicas},
+  journal   = {Revista Latinoamericana de Informática Biomédica},
+  year      = {2021},
+  volume    = {15},
+  number    = {1},
+  pages     = {23--40}
+}
+
+@book{ruiz2018Libro,
+  author    = {ruiz, marco a.},
+  title     = {introduccion a la escritura cientifica en latex},
+  publisher = {TecnoEditores},
+  year      = {2018}
+}
+
+@article{Santos2022,
+  author    = {Santos, P. and Lopez, J.},
+  title     = {Aplicaciones de visión por computadora en agricultura de precisión},
+  journal   = {Revista de Tecnologias Inteligentes},
+  year      = {2022}
+}
+
+------------------------------------------------------------
+Archivo corregido: referencias.bib (versión limpia)
+------------------------------------------------------------
+
+@article{Garcia2021,
+  author    = {García, Laura and Hernández, Diego},
+  title     = {Redes neuronales profundas para clasificación de imágenes médicas},
+  journal   = {Revista Latinoamericana de Informática Biomédica},
+  year      = {2021},
+  volume    = {15},
+  number    = {1},
+  pages     = {23--40},
+  doi       = {10.1234/rib.2021.001},
+  issn      = {1234-5678},
+  keywords  = {medicina, deep learning, imagenes},
+}
+
+@book{Ruiz2018,
+  author    = {Ruiz, Marco Antonio},
+  title     = {Introducción a la escritura científica en LaTeX},
+  publisher = {TecnoEditores},
+  year      = {2018},
+  address   = {Ciudad de México},
+  isbn      = {978-1-2345-6789-0},
+  keywords  = {latex, escritura, metodologia},
+}
+
+@article{Santos2022,
+  author    = {Santos, Paula and López, Javier},
+  title     = {Aplicaciones de visión por computadora en agricultura de precisión},
+  journal   = {Revista de Tecnologías Inteligentes},
+  year      = {2022},
+  volume    = {9},
+  number    = {2},
+  pages     = {101--119},
+  doi       = {10.5678/rti.2022.009},
+  keywords  = {agricultura, vision, computacion},
+}
+
+------------------------------------------------------------
+Resumen de los cambios realizados
+------------------------------------------------------------
+
+1. Eliminación de duplicados:
+   - Las entradas "garcia2021" y "Garcia2021b" describían el mismo artículo.
+   - Se consolidaron en una sola entrada "Garcia2021" completa y coherente.
+
+2. Normalización de autores:
+   - "L. Garcia and D. HERNANDEZ" → "García, Laura and Hernández, Diego"
+   - "ruiz, marco a."              → "Ruiz, Marco Antonio"
+   - "Santos, P. and Lopez, J."    → "Santos, Paula and López, Javier"
+
+3. Completar campos bibliográficos:
+   - Se añadieron volumen, número, páginas, DOI, ISSN, ISBN, address
+     y demás campos faltantes donde fue pertinente.
+
+4. Uso de "keywords":
+   - A cada entrada se le asignaron palabras clave como:
+     "medicina", "deep learning", "latex", "agricultura", etc.
+   - Esto permite luego generar bibliografías temáticas:
+       \printbibliography[keyword=medicina]
+       \printbibliography[keyword=latex]
+
+------------------------------------------------------------
+Archivo LaTeX de prueba: main.tex
+------------------------------------------------------------
+
+\documentclass{article}
+\usepackage[backend=biber,style=authoryear]{biblatex}
+\addbibresource{referencias.bib}
+
+\begin{document}
+
+\section*{Prueba de bibliograf\'ia limpia}
+
+Diversos trabajos han explorado el uso de redes neuronales profundas
+en el contexto de imágenes médicas \parencite{Garcia2021}. 
+Por otra parte, la escritura científica en \LaTeX{} se ha consolidado
+como una herramienta clave para la redacción de artículos y tesis
+\parencite{Ruiz2018}. 
+Las aplicaciones de visión por computadora en agricultura de precisión
+representan un campo en crecimiento \parencite{Santos2022}.
+
+\printbibliography
+
+\end{document}
+
+------------------------------------------------------------
+Verificación con biber
+------------------------------------------------------------
+
+1. Compilar:
+      pdflatex main
+      biber main
+      pdflatex main
+      pdflatex main
+
+2. Revisar la salida de biber:
+   - Verificar que NO se reporten:
+     * claves duplicadas,
+     * campos mal escritos,
+     * advertencias por campos desconocidos.
+
+3. Resultado esperado:
+   - Bibliografía sin duplicados,
+   - Autores con formato consistente,
+   - Campos completos (año, revista/editorial, volumen, páginas, DOI),
+   - Sin advertencias críticas en la compilación.
+
+FIN DE LA SOLUCIÓN DEL EJERCICIO 05 – UNIDAD 6
