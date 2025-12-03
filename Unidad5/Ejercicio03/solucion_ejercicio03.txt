@@ -1,0 +1,65 @@
+===========================
+EJERCICIO 03 – UNIDAD 5
+Sumatoria e integral con límites
+===========================
+
+Este ejercicio muestra cómo escribir en LaTeX:
+- una integral definida con límites,
+- una sumatoria que incluye una condición sobre el índice.
+
+----------------------------------------
+Archivo: main.tex
+----------------------------------------
+
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\section*{Integral definida y sumatoria con condici\'on}
+
+A continuaci\'on se presentan dos ejemplos: una integral definida y
+una sumatoria con condici\'on sobre el \'indice.
+
+% ---------------------------------------------------------
+% 1. Integral definida con límites
+% ---------------------------------------------------------
+
+La siguiente integral definida se eval\'ua entre $0$ y $\pi$:
+
+\[
+\int_{0}^{\pi} \sin(x)\, dx = 2.
+\]
+
+% ---------------------------------------------------------
+% 2. Sumatoria con condición sobre el índice
+% ---------------------------------------------------------
+
+Ahora consideramos una sumatoria donde el \'indice recorre solo 
+valores pares entre 2 y 10:
+
+\[
+\sum_{\substack{i = 2 \\ i \text{ par}}}^{10} i
+= 2 + 4 + 6 + 8 + 10.
+\]
+
+Una forma alternativa de escribir la misma suma es parametrizar
+los valores pares como $i = 2k$:
+
+\[
+\sum_{k = 1}^{5} 2k = 2 + 4 + 6 + 8 + 10.
+\]
+
+\end{document}
+
+----------------------------------------
+INSTRUCCIONES:
+----------------------------------------
+1. Copia este contenido en un archivo llamado main.tex.
+2. Compila el documento con tu editor de LaTeX.
+3. Observa:
+   - c\'omo se muestran claramente los l\'imites de la integral,
+   - c\'omo se indica la condici\'on “$i$ par” en la sumatoria,
+   - la alternativa equivalente usando un cambio de \'indice.
+
+FIN DEL EJERCICIO 03 – UNIDAD 5
