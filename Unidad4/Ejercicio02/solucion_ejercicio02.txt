@@ -1,0 +1,67 @@
+===========================
+EJERCICIO 02 – UNIDAD 4
+Listas anidadas y personalización con enumitem
+===========================
+
+Este ejercicio muestra cómo crear listas anidadas y controlar
+su estilo usando el paquete enumitem.
+
+----------------------------------------
+Archivo: main.tex
+----------------------------------------
+
+\documentclass[12pt]{article}
+
+\usepackage{enumitem} % Paquete para personalizar listas
+
+% Opcional: configuramos un estilo general para las listas
+\setlist{itemsep=4pt, topsep=6pt}
+
+\begin{document}
+
+\section*{Ejemplo de listas anidadas y personalizadas}
+
+A continuación se muestra una lista principal con números romanos
+y un segundo nivel con viñetas personalizadas:
+
+\begin{enumerate}[label=\roman*)]  % Números romanos: i), ii), iii), ...
+    \item Primera categoría
+        \begin{itemize}[label=--] % Viñeta personalizada
+            \item Elemento asociado a la primera categoría.
+            \item Otro elemento relacionado.
+        \end{itemize}
+    \item Segunda categoría
+        \begin{itemize}[label=--]
+            \item Elemento asociado a la segunda categoría.
+            \item Detalle adicional de la segunda categoría.
+        \end{itemize}
+    \item Tercera categoría
+        \begin{itemize}[label=--]
+            \item Primer elemento descriptivo.
+            \item Segundo elemento descriptivo.
+        \end{itemize}
+\end{enumerate}
+
+\end{document}
+
+----------------------------------------
+INSTRUCCIONES:
+----------------------------------------
+1. Copia este contenido en un archivo llamado main.tex.
+2. Compila el documento en tu editor de LaTeX.
+3. Observa:
+   - La numeración romana en la lista principal (i, ii, iii, ...).
+   - Las viñetas personalizadas "--" en el segundo nivel.
+   - La alineación y sangrías generadas automáticamente.
+
+----------------------------------------
+COMENTARIOS:
+----------------------------------------
+- El parámetro [label=\roman*)] en enumerate define el formato
+  de la numeración (i), ii), iii), ...).
+- El parámetro [label=--] en itemize reemplaza el símbolo
+  de viñeta estándar por "--".
+- Con \setlist{itemsep=4pt} ajustamos el espacio entre elementos
+  para lograr un aspecto más limpio.
+
+FIN DEL EJERCICIO 02 – UNIDAD 4
