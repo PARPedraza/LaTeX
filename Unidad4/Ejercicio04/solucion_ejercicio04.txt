@@ -1,0 +1,63 @@
+===========================
+EJERCICIO 04 – UNIDAD 4
+Inserción y referencia de figuras
+===========================
+
+Este ejercicio muestra cómo insertar una imagen en LaTeX usando el
+entorno figure, asignarle un título mediante caption, definir una
+etiqueta con label y referenciarla correctamente desde el texto.
+
+----------------------------------------
+Archivo: main.tex
+----------------------------------------
+
+\documentclass[12pt]{article}
+
+\usepackage{graphicx}  % Necesario para \includegraphics
+
+\begin{document}
+
+\section*{Ejemplo de inserción y referencia de figuras}
+
+A continuación se muestra una figura incluida en el documento.  
+Nótese cómo se numera automáticamente y cómo puede referenciarse desde el texto.
+
+% Referencia cruzada antes de la figura
+La Figura~\ref{fig:mi_figura} representa un ejemplo de imagen insertada correctamente.
+
+\begin{figure}[h]
+    \centering
+    % Ajusta el ancho según lo necesites
+    \includegraphics[width=0.5\textwidth]{fig/ch04_ejemplo.jpg}
+    \caption{Ejemplo de figura insertada en LaTeX.}
+    \label{fig:mi_figura}
+\end{figure}
+
+Como puede observarse, \LaTeX{} actualiza el número de figura
+y mantiene la referencia consistente incluso si se reordena el documento.
+
+\end{document}
+
+----------------------------------------
+INSTRUCCIONES:
+----------------------------------------
+1. Guarda una imagen con el nombre:
+      fig/ch04_ejemplo.jpg
+2. Copia este contenido en un archivo llamado main.tex.
+3. Compila el documento.
+4. Revisa:
+   - que la figura aparezca centrada,
+   - que el título se muestre debajo de la imagen,
+   - que la referencia “Figura~1” sea generada automáticamente,
+   - que al mover la figura de lugar, la referencia siga funcionando.
+
+----------------------------------------
+COMENTARIOS:
+----------------------------------------
+- El comando \label debe colocarse dentro del entorno figure,
+  preferentemente después de \caption para garantizar la numeración correcta.
+- La referencia se realiza siempre con \ref{clave_de_figura}.
+- No uses rutas completas ni espacios en nombres de archivos; emplea
+  convenciones claras como ch04_ejemplo.jpg.
+
+FIN DEL EJERCICIO 04 – UNIDAD 4
