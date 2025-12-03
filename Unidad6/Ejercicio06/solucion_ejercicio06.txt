@@ -1,0 +1,79 @@
+===========================
+UNIDAD 6 – EJERCICIO 06
+Conversión de referencia manual a formato BibTeX
+===========================
+
+Referencia dada en formato tradicional:
+
+    Smith, John (2020). Deep Learning Applications. Springer, New York.
+
+El objetivo es convertir esta referencia manual a una entrada correcta en BibTeX,
+incluyendo campos recomendados: author, year, title, publisher, address e isbn (si aplica).
+
+------------------------------------------------------------
+Entrada BibTeX generada
+------------------------------------------------------------
+
+@book{Smith2020,
+  author    = {Smith, John},
+  title     = {Deep Learning Applications},
+  publisher = {Springer},
+  year      = {2020},
+  address   = {New York},
+  isbn      = {978-3-030-00000-0},
+}
+
+------------------------------------------------------------
+Notas sobre la conversión
+------------------------------------------------------------
+
+1. Clave de citación (Smith2020):
+   - Se recomienda usar Apellido + Año para identificar fácilmente la entrada.
+
+2. Campo "author":
+   - El formato correcto es: Apellido, Nombre.
+
+3. Campo "title":
+   - Respetar mayúsculas y estilo editorial.
+   - Si el título tuviera palabras en inglés que deben conservar capitalización,
+     se pueden encerrar entre llaves: {Deep Learning} Applications.
+
+4. Campo "publisher" y "address":
+   - Springer es la editorial.
+   - New York es la ciudad donde se ubica la editorial.
+
+5. Campo "isbn":
+   - Es opcional, pero recomendado en libros.
+   - El número utilizado aquí es ficticio pero sigue el formato estándar ISBN-13.
+
+------------------------------------------------------------
+Ejemplo de uso en un documento LaTeX
+------------------------------------------------------------
+
+\documentclass{article}
+\usepackage[backend=biber,style=authoryear]{biblatex}
+\addbibresource{referencias.bib}
+
+\begin{document}
+
+El libro de Smith presenta una introducción sólida a las aplicaciones
+modernas de aprendizaje profundo \parencite{Smith2020}.
+
+\printbibliography
+
+\end{document}
+
+------------------------------------------------------------
+Flujo de compilación
+------------------------------------------------------------
+
+1. pdflatex main
+2. biber main
+3. pdflatex main
+4. pdflatex main
+
+El PDF resultante debe mostrar:
+- La cita correcta en el texto,
+- La referencia completa en la bibliografía.
+
+FIN DE LA SOLUCIÓN DEL EJERCICIO 06 – UNIDAD 6
