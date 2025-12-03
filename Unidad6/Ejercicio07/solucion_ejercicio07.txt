@@ -1,0 +1,143 @@
+===========================
+UNIDAD 6 – EJERCICIO 07
+Bibliografías independientes por capítulo
+===========================
+
+Este ejercicio muestra cómo usar refsection (biblatex) para generar
+bibliografías independientes en cada capítulo de un documento.
+
+------------------------------------------------------------
+Archivo: referencias.bib
+------------------------------------------------------------
+
+@book{Ruiz2018,
+  author    = {Ruiz, Marco Antonio},
+  title     = {Introducción a la escritura científica en LaTeX},
+  publisher = {TecnoEditores},
+  year      = {2018},
+  address   = {Ciudad de México},
+}
+
+@article{Garcia2021,
+  author    = {García, Laura and Hernández, Diego},
+  title     = {Redes neuronales profundas para clasificación de imágenes médicas},
+  journal   = {Revista Latinoamericana de Informática Biomédica},
+  year      = {2021},
+  volume    = {15},
+  number    = {1},
+  pages     = {23--40},
+}
+
+@inproceedings{Santos2022,
+  author    = {Santos, Paula and López, Javier},
+  title     = {Aplicaciones de visión por computadora en agricultura de precisión},
+  booktitle = {Memorias del Congreso Iberoamericano de Tecnologías Inteligentes},
+  year      = {2022},
+  pages     = {101--110},
+  organization = {Sociedad Iberoamericana de Computación},
+}
+
+------------------------------------------------------------
+Archivo: main.tex
+------------------------------------------------------------
+
+\documentclass{book}
+
+\usepackage[backend=biber,
+            style=authoryear,
+            sorting=nyt]{biblatex}
+
+\addbibresource{referencias.bib}
+
+\begin{document}
+
+\tableofcontents
+
+% ---------------------------------------------------------
+% Capítulo 1 con refsection propio
+% ---------------------------------------------------------
+\chapter{Fundamentos te\'oricos}
+\begin{refsection}
+
+En este cap\'itulo se revisan conceptos b\'asicos de redacci\'on acad\'emica
+y uso de \LaTeX{}. Una introducci\'on general puede encontrarse en
+\textcite{Ruiz2018}, donde se abordan aspectos de estructura, estilo
+y buenas pr\'acticas.
+
+\medskip
+Al final de este cap\'itulo se muestra una bibliograf\'ia local que incluye
+solo las referencias citadas aqu\'i.
+
+\printbibliography[title={Referencias del Cap\'itulo 1}]
+
+\end{refsection}
+
+% ---------------------------------------------------------
+% Capítulo 2 con su propia refsection
+% ---------------------------------------------------------
+\chapter{Aplicaciones en visi\'on computacional}
+\begin{refsection}
+
+En este cap\'itulo se consideran aplicaciones de aprendizaje profundo
+en contextos biom\'edicos \parencite{Garcia2021} y en agricultura de
+precisi\'on \parencite{Santos2022}. Estos trabajos ilustran c\'omo
+las redes neuronales y la visi\'on por computadora se integran en
+escenarios reales.
+
+\medskip
+La bibliograf\'ia al final de este cap\'itulo es independiente de la
+del Cap\'itulo 1 y solo recoge las referencias citadas aqu\'i.
+
+\printbibliography[title={Referencias del Cap\'itulo 2}]
+
+\end{refsection}
+
+\end{document}
+
+------------------------------------------------------------
+COMENTARIOS SOBRE EL USO DE REFSECTION
+------------------------------------------------------------
+
+1. Cada capítulo se encuentra dentro de un entorno:
+
+       \begin{refsection}
+         ... contenido con citas ...
+         \printbibliography[title={...}]
+       \end{refsection}
+
+   Esto aísla las citas: las referencias del Capítulo 1 no aparecen
+   en la bibliografía del Capítulo 2 y viceversa.
+
+2. El archivo referencias.bib es común a todo el documento, pero
+   biblatex/biber solo imprime en cada refsection las entradas
+   que hayan sido citadas dentro de ese entorno.
+
+3. Es posible combinar refsection con filtros adicionales
+   (type=article, keyword=...), si se desea una bibliografía
+   aún más específica en cada capítulo.
+
+------------------------------------------------------------
+FLUJO DE COMPILACIÓN
+------------------------------------------------------------
+
+1. pdflatex main
+2. biber main
+3. pdflatex main
+4. pdflatex main
+
+------------------------------------------------------------
+RESULTADO ESPERADO
+------------------------------------------------------------
+
+- El Capítulo 1 mostrará una bibliografía con solo la referencia:
+      Ruiz2018
+
+- El Capítulo 2 mostrará una bibliografía con:
+      Garcia2021
+      Santos2022
+
+- No aparecerá una bibliografía global al final del libro, a menos
+  que se añada una llamada explícita a \printbibliography fuera de
+  los entornos refsection.
+
+FIN DE LA SOLUCIÓN DEL EJERCICIO 07 – UNIDAD 6
