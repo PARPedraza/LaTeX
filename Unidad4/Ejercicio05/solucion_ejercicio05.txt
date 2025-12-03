@@ -1,0 +1,63 @@
+===========================
+EJERCICIO 05 – UNIDAD 4
+Algoritmo usando algpseudocode
+===========================
+
+Este ejercicio muestra cómo escribir un algoritmo breve usando los
+entornos algorithm y algpseudocode, respetando la numeración de líneas
+y la estructura lógica del pseudocódigo.
+
+A continuación se muestra un algoritmo de BÚSQUEDA LINEAL.
+
+----------------------------------------
+Archivo: main.tex
+----------------------------------------
+
+\documentclass[12pt]{article}
+
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+\begin{document}
+
+\section*{Ejemplo de algoritmo en pseudocódigo}
+
+El Algoritmo~\ref{alg:busqueda_lineal} implementa la búsqueda lineal
+sobre una lista de elementos.
+
+\begin{algorithm}
+\caption{Búsqueda lineal en una lista}\label{alg:busqueda_lineal}
+\begin{algorithmic}[1]
+    \Procedure{LinearSearch}{lista, objetivo}
+        \For{cada elemento $x$ en lista}
+            \If{$x = objetivo$}
+                \State \Return Verdadero
+            \EndIf
+        \EndFor
+        \State \Return Falso
+    \EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\end{document}
+
+----------------------------------------
+INSTRUCCIONES:
+----------------------------------------
+1. Copia este contenido en un archivo llamado main.tex.
+2. Compila el documento usando tu editor de LaTeX.
+3. Observa que:
+   - El entorno algorithm genera un marco con título.
+   - El entorno algorithmic añade numeración automática de líneas.
+   - La estructura If / For / Return es clara y fácil de leer.
+   - La referencia cruzada a Algoritmo~\ref{alg:busqueda_lineal}
+     se actualiza automáticamente.
+
+----------------------------------------
+NOTAS:
+----------------------------------------
+- Puedes modificar el algoritmo para implementar una búsqueda binaria.
+- Usa nombres descriptivos para las variables y procedimientos.
+- Evita sobrecargar el pseudocódigo con detalles específicos de un lenguaje.
+
+FIN DEL EJERCICIO 05 – UNIDAD 4
