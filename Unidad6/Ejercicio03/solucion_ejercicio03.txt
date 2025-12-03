@@ -1,0 +1,121 @@
+===========================
+UNIDAD 6 – EJERCICIO 03
+Comparación de estilos bibliográficos
+===========================
+
+Este ejercicio muestra cómo cambia la presentación de citas y referencias
+al usar dos estilos distintos de biblatex:
+
+- un estilo numérico (numeric),
+- un estilo autor–año (authoryear).
+
+Se reutilizan las mismas tres referencias en el archivo referencias.bib.
+
+------------------------------------------------------------
+Archivo: referencias.bib
+------------------------------------------------------------
+
+@article{Garcia2021,
+  author    = {García, Laura and Hernández, Diego},
+  title     = {Redes neuronales profundas para clasificación de imágenes médicas},
+  journal   = {Revista Latinoamericana de Informática Biomédica},
+  year      = {2021},
+  volume    = {15},
+  number    = {1},
+  pages     = {23--40},
+}
+
+@book{Ruiz2018,
+  author    = {Ruiz, Marco Antonio},
+  title     = {Introducción a la escritura científica en LaTeX},
+  publisher = {TecnoEditores},
+  year      = {2018},
+  address   = {Ciudad de México},
+}
+
+@inproceedings{Santos2022,
+  author    = {Santos, Paula and López, Javier},
+  title     = {Aplicaciones de visión por computadora en agricultura de precisión},
+  booktitle = {Memorias del Congreso Iberoamericano de Tecnologías Inteligentes},
+  year      = {2022},
+  pages     = {101--110},
+  organization = {Sociedad Iberoamericana de Computación},
+}
+
+------------------------------------------------------------
+Archivo: main_numeric.tex  (estilo numérico)
+------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage[backend=biber,style=numeric]{biblatex}
+\addbibresource{referencias.bib}
+
+\begin{document}
+
+\section*{Ejemplo con estilo num\'erico}
+
+En este ejemplo, las citas se muestran como n\'umeros entre corchetes,
+por ejemplo \cite{Garcia2021}.  
+Los fundamentos de la escritura cient\'ifica en \LaTeX{} se pueden
+consultar en \cite{Ruiz2018}, mientras que las aplicaciones en
+agricultura de precisi\'on se describen en \cite{Santos2022}.
+
+\printbibliography
+
+\end{document}
+
+------------------------------------------------------------
+Archivo: main_authoryear.tex  (estilo autor–año)
+------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage[backend=biber,style=authoryear]{biblatex}
+\addbibresource{referencias.bib}
+
+\begin{document}
+
+\section*{Ejemplo con estilo autor--a\~no}
+
+En este ejemplo, las citas se muestran en formato autor--a\~no,
+por ejemplo \parencite{Garcia2021}.  
+Los fundamentos de la escritura cient\'ifica en \LaTeX{} se discuten
+en \textcite{Ruiz2018}, mientras que las aplicaciones en agricultura
+de precisi\'on se analizan en \parencite{Santos2022}.
+
+\printbibliography
+
+\end{document}
+
+------------------------------------------------------------
+FLUJO DE COMPILACIÓN (para ambos archivos)
+------------------------------------------------------------
+
+Para cada uno de los archivos (main_numeric.tex y main_authoryear.tex):
+
+1. Ejecutar:    pdflatex <archivo>
+2. Ejecutar:    biber <archivo>
+3. Ejecutar:    pdflatex <archivo>
+4. Ejecutar:    pdflatex <archivo>
+
+------------------------------------------------------------
+OBSERVACIONES ESPERADAS
+------------------------------------------------------------
+
+1. En el archivo main_numeric.pdf:
+   - Las citas aparecen como [1], [2], [3].
+   - La bibliografía está numerada y suele ordenarse por aparición
+     o según el parámetro "sorting".
+
+2. En el archivo main_authoryear.pdf:
+   - Las citas aparecen en formato (Autor, Año), por ejemplo
+     (García y Hernández, 2021).
+   - La bibliografía lista las referencias ordenadas alfabéticamente
+     por autor (o según "sorting").
+
+Comparar ambos PDF permite visualizar claramente cómo el cambio
+de estilo afecta tanto las citas en el texto como el formato de
+la lista de referencias.
+
+FIN DE LA SOLUCIÓN DEL EJERCICIO 03 – UNIDAD 6
