@@ -1,0 +1,156 @@
+===========================
+UNIDAD 6 – EJERCICIO 08
+Exportación profesional desde Zotero/Mendeley
+===========================
+
+Este ejercicio ilustra cómo:
+
+1. Exportar referencias desde un gestor bibliográfico (Zotero/Mendeley),
+2. Usar el archivo .bib exportado en un proyecto LaTeX con biblatex,
+3. Verificar que los DOIs/URLs se muestren correctamente según el estilo.
+
+A continuación se muestra un ejemplo simplificado de un archivo .bib
+tal como podría generarlo Zotero/Mendeley, seguido de un archivo main.tex
+que lo utiliza.
+
+------------------------------------------------------------
+Archivo de ejemplo exportado: biblioteca.bib
+------------------------------------------------------------
+
+@article{Perez2020,
+  author       = {Pérez, Ana and Ramírez, Luis},
+  title        = {Deep Learning Approaches for Medical Image Segmentation},
+  journal      = {International Journal of Computer Vision in Medicine},
+  year         = {2020},
+  volume       = {12},
+  number       = {3},
+  pages        = {145--162},
+  doi          = {10.1000/ijcvm.2020.0012},
+  url          = {https://doi.org/10.1000/ijcvm.2020.0012}
+}
+
+@article{Lopez2021,
+  author       = {López, María Fernanda and Gómez, Carlos},
+  title        = {Computer Vision Techniques in Precision Agriculture},
+  journal      = {Computers and Electronics in Agriculture},
+  year         = {2021},
+  volume       = {180},
+  pages        = {105--120},
+  doi          = {10.1000/cea.2021.0180},
+  url          = {https://doi.org/10.1000/cea.2021.0180}
+}
+
+@book{Smith2019,
+  author       = {Smith, John},
+  title        = {Foundations of Deep Learning},
+  publisher    = {Springer},
+  year         = {2019},
+  address      = {Berlin},
+  isbn         = {978-3-030-12345-6},
+  url          = {https://link.springer.com/book/10.1000/978-3-030-12345-6}
+}
+
+@inproceedings{Chen2022,
+  author       = {Chen, Li and Wang, Mei},
+  title        = {3D Point Cloud Registration for Industrial Inspection},
+  booktitle    = {Proceedings of the International Conference on Robotics and Automation},
+  year         = {2022},
+  pages        = {250--259},
+  doi          = {10.1000/icra.2022.0250},
+  url          = {https://doi.org/10.1000/icra.2022.0250}
+}
+
+@article{Garcia2023,
+  author       = {García, Laura and Hernández, Diego},
+  title        = {Explainable AI Methods for Clinical Decision Support},
+  journal      = {Journal of Medical Informatics},
+  year         = {2023},
+  volume       = {29},
+  number       = {1},
+  pages        = {1--18},
+  doi          = {10.1000/jmi.2023.0001},
+  url          = {https://doi.org/10.1000/jmi.2023.0001}
+}
+
+------------------------------------------------------------
+Archivo: main.tex
+------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage[backend=biber,
+            style=ieee,
+            url=true,
+            doi=true]{biblatex}
+
+\addbibresource{biblioteca.bib}
+
+\begin{document}
+
+\section*{Integraci\'on de Zotero/Mendeley con \LaTeX{}}
+
+En este documento ilustramos c\'omo un archivo \texttt{.bib} exportado
+desde un gestor bibliogr\'afico puede integrarse de forma directa en
+un flujo de trabajo con \LaTeX{}.
+
+Los modelos de \emph{deep learning} aplicados a la segmentaci\'on de
+imágenes médicas han sido ampliamente explorados en la literatura
+\cite{Perez2020,Garcia2023}.  
+Por otra parte, la visi\'on computacional en agricultura de precisi\'on
+se ha consolidado como un campo de investigación aplicado
+\cite{Lopez2021}.  
+En el contexto de inspecci\'on industrial, las nubes de puntos 3D
+también juegan un papel relevante \cite{Chen2022}, mientras que las
+bases te\'oricas de estos modelos se detallan en obras de referencia
+\cite{Smith2019}.
+
+\printbibliography[title={Referencias exportadas desde Zotero/Mendeley}]
+
+\end{document}
+
+------------------------------------------------------------
+Pasos típicos en Zotero/Mendeley (resumen)
+------------------------------------------------------------
+
+1. Organizar las referencias en una carpeta o colección dentro del gestor.
+2. Seleccionar "Exportar" o "Export Library".
+3. Elegir el formato:
+       BibTeX (.bib)
+4. Guardar el archivo con un nombre significativo,
+   por ejemplo: biblioteca.bib
+5. Copiar el archivo .bib a la carpeta del proyecto LaTeX.
+
+------------------------------------------------------------
+Flujo de compilación con biblatex + biber
+------------------------------------------------------------
+
+1. pdflatex main
+2. biber main
+3. pdflatex main
+4. pdflatex main
+
+Tras la compilación:
+
+- Las citas aparecerán en formato numérico (estilo IEEE).
+- La bibliografía mostrará los DOIs y URLs según la configuración
+  de biblatex (opciones doi=true, url=true).
+
+------------------------------------------------------------
+Verificación de estilo
+------------------------------------------------------------
+
+Para comprobar el efecto de los estilos, se pueden hacer pruebas como:
+
+- Cambiar en el preámbulo:
+      style=ieee
+  por:
+      style=authoryear
+  o:
+      style=apa
+
+- Volver a compilar con el flujo:
+      pdflatex → biber → pdflatex → pdflatex
+
+y observar cómo cambian las citas en el texto y el formato de la bibliografía.
+
+FIN DE LA SOLUCIÓN DEL EJERCICIO 08 – UNIDAD 6
