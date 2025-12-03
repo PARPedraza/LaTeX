@@ -1,0 +1,40 @@
+===========================
+EJERCICIO 01 – UNIDAD 4
+Aplicación de estilos y macros
+===========================
+
+Este ejercicio muestra cómo aplicar distintos estilos de texto en LaTeX
+y cómo definir una macro personalizada para resaltar términos clave.
+
+----------------------------------------
+Archivo: main.tex
+----------------------------------------
+
+\documentclass[12pt]{article}
+
+% Definimos una macro para términos clave
+\newcommand{\term}[1]{\textit{#1}}
+
+\begin{document}
+
+\section*{Ejemplo de estilos y macro}
+
+Este es un párrafo de ejemplo en el que se aplican diferentes estilos.
+En primer lugar, resaltamos una palabra en \textbf{negritas} para llamar
+la atención del lector. Luego incluimos una frase completa en 
+\textit{cursivas para enfatizar una idea importante dentro del texto}, 
+y finalmente utilizamos una expresión \underline{subrayada} como parte 
+del ejercicio. Además, usamos la macro definida para marcar un 
+\term{término relevante} dentro del contexto.
+
+\end{document}
+
+----------------------------------------
+
+INSTRUCCIONES:
+1. Guarda este contenido en un archivo llamado main.tex.
+2. Compila el documento con cualquier editor de LaTeX.
+3. Observa cómo cada estilo afecta visualmente el texto.
+4. Modifica el contenido y prueba distintos usos de la macro \term{}.
+
+FIN DEL EJERCICIO 01 – UNIDAD 4
