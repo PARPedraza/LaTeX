@@ -1,0 +1,65 @@
+===========================
+UNIDAD 6 – EJERCICIO 01
+Creación y uso de entradas básicas en BibTeX
+===========================
+
+Este ejercicio muestra cómo:
+
+1. Crear un archivo .bib,
+2. Agregar entradas ficticias (un artículo y un libro),
+3. Citarlas dentro de un documento LaTeX usando biblatex.
+
+------------------------------------------------------------
+Archivo: referencias.bib
+------------------------------------------------------------
+
+@article{Gomez2023,
+  author    = {Gómez, Ana and Rivera, Luis},
+  title     = {Análisis comparativo de técnicas modernas de aprendizaje automático},
+  journal   = {Revista Iberoamericana de Computación},
+  year      = {2023},
+  volume    = {18},
+  number    = {2},
+  pages     = {55--72},
+}
+
+@book{Lopez2019,
+  author    = {López, María Fernanda},
+  title     = {Fundamentos teóricos de la inteligencia artificial},
+  publisher = {Editorial Alfa},
+  year      = {2019},
+  address   = {Ciudad de México},
+}
+
+------------------------------------------------------------
+Archivo: main.tex (fragmento)
+------------------------------------------------------------
+
+\documentclass{article}
+\usepackage[backend=biber,style=authoryear]{biblatex}
+\addbibresource{referencias.bib}
+
+\begin{document}
+
+\section*{Citas de ejemplo}
+
+La literatura reciente muestra avances importantes en técnicas de aprendizaje
+automático \parencite{Gomez2023}. Asimismo, los fundamentos teóricos que sustentan
+estas metodologías continúan ampliándose y sistematizándose en obras de referencia
+como \textcite{Lopez2019}.
+
+\printbibliography
+
+\end{document}
+
+------------------------------------------------------------
+INSTRUCCIONES:
+------------------------------------------------------------
+
+1. Crea un archivo llamado referencias.bib y copia en él las dos entradas anteriores.
+2. Compila con:
+      pdflatex → biber → pdflatex → pdflatex
+3. Verifica que las citas aparezcan correctamente en el texto.
+4. Comprueba que la bibliografía listada al final contiene ambas referencias.
+
+FIN DE LA SOLUCIÓN DEL EJERCICIO 01 – UNIDAD 6
