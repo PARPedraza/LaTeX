@@ -1,0 +1,149 @@
+===========================
+UNIDAD 7 – EJERCICIO 04
+Portada institucional personalizada
+===========================
+
+Este ejercicio muestra cómo crear una portada institucional limpia y profesional
+utilizando el entorno titlepage. La portada incluye:
+
+- Título principal y subtítulo
+- Autor
+- Institución
+- Fecha
+- Logotipo/escudo escalado a 0.2\linewidth
+
+------------------------------------------------------------
+Archivos requeridos
+------------------------------------------------------------
+
+1) main.tex
+2) Un archivo de imagen para el logotipo, por ejemplo:
+      fig/logo_institucion.png
+   (puede ser PNG/JPG/PDF; se recomienda PDF si es vectorial)
+
+------------------------------------------------------------
+Archivo: main.tex
+------------------------------------------------------------
+
+\documentclass[12pt]{book}
+
+\usepackage[spanish]{babel}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+
+\usepackage{graphicx}
+\usepackage{lipsum} % Texto de prueba (opcional)
+
+\begin{document}
+
+% --------------------------------------------------------
+% Portada institucional (titlepage)
+% --------------------------------------------------------
+\begin{titlepage}
+	\centering
+	
+	% Espacio superior
+	\vspace*{1.5cm}
+	
+	% Logotipo institucional
+	\includegraphics[width=0.2\linewidth]{fig/logo_institucion.png}
+	
+	\vspace{1.0cm}
+	
+	% Título principal
+	{\Huge \bfseries Título principal del documento \par}
+	
+	\vspace{0.4cm}
+	
+	% Subtítulo
+	{\Large Subtítulo o descripción extendida del documento \par}
+	
+	\vspace{1.2cm}
+	
+	% Separador sutil (opcional)
+	\rule{0.8\textwidth}{0.4pt}
+	
+	\vspace{1.2cm}
+	
+	% Autor e institución
+	{\Large \textbf{Autor:} Nombre del autor \par}
+	\vspace{0.3cm}
+	{\Large \textbf{Institución:} Nombre de la institución \par}
+	
+	\vfill
+	
+	% Fecha
+	{\large \textbf{Fecha:} \today \par}
+\end{titlepage}
+
+% --------------------------------------------------------
+% Contenido principal (solo para verificar que todo compila)
+% --------------------------------------------------------
+\tableofcontents
+
+\chapter{Introducción}
+\lipsum[1-3]
+
+\end{document}
+
+------------------------------------------------------------
+COMENTARIOS CLAVE DEL EJERCICIO
+------------------------------------------------------------
+
+1. La portada se aísla con:
+       \begin{titlepage} ... \end{titlepage}
+   Esto fuerza una página independiente con control total del layout.
+
+2. El logotipo se incluye con graphicx y se escala exactamente como pide el ejercicio:
+       \includegraphics[width=0.2\linewidth]{fig/logo_institucion.png}
+
+3. El uso de \vspace y \vfill ayuda a mantener una composición “con aire”:
+   - \vspace controla separaciones fijas
+   - \vfill empuja la fecha hacia la parte inferior de la portada
+
+4. Para una portada aún más institucional, puedes:
+   - cambiar el archivo del logo a PDF (vectorial)
+   - ajustar la regla separadora o eliminarla
+   - sustituir \today por una fecha fija (p. ej., Diciembre 2025)
+
+------------------------------------------------------------
+PASOS PARA EJECUTAR EL EJERCICIO (PROCESO NUMERADO)
+------------------------------------------------------------
+
+1. Crea una carpeta para figuras (si no existe):
+       fig/
+
+2. Coloca tu escudo o logotipo dentro de fig/ con un nombre, por ejemplo:
+       fig/logo_institucion.png
+   (si usas otro nombre o formato, actualiza la ruta en \includegraphics).
+
+3. Crea un archivo llamado:
+       main.tex
+
+4. Copia y pega el contenido completo mostrado arriba dentro de main.tex.
+
+5. Compila el documento (flujo normal con PDFLaTeX):
+       - En TeXStudio: presiona F5 (o Compilar)
+       - En terminal (opcional):
+            pdflatex main.tex
+            pdflatex main.tex
+
+6. Verifica el resultado en el PDF:
+       - Debe aparecer el logotipo en la parte superior, escalado a 0.2\linewidth.
+       - El título y subtítulo deben estar centrados y bien espaciados.
+       - Autor e institución deben estar legibles y alineados al centro.
+       - La fecha debe quedar hacia la parte inferior gracias a \vfill.
+
+7. Ajusta el espaciado si tu logo es muy alto o muy ancho:
+       - Modifica \vspace*{1.5cm} o los \vspace intermedios.
+       - Mantén el ancho del logo en 0.2\linewidth como requisito del ejercicio.
+
+------------------------------------------------------------
+RESULTADO ESPERADO
+------------------------------------------------------------
+
+- Portada limpia, institucional y equilibrada visualmente.
+- Logotipo/escudo visible y correctamente escalado a 0.2\linewidth.
+- Información mínima completa: título, autor, institución y fecha.
+- Documento compila sin errores y el contenido inicia después de la portada.
+
+FIN DE LA SOLUCIÓN DEL EJERCICIO 04 – UNIDAD 7
