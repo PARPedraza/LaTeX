@@ -1,0 +1,190 @@
+===========================
+UNIDAD 8 – EJERCICIO 07
+Inserción básica de video en Beamer (MP4)
+===========================
+
+Este ejercicio muestra dos formas comunes de incluir video en una presentación Beamer:
+
+A) Enlace “clicable” al video (robusto y recomendado en la mayoría de escenarios).
+B) Inserción con botón de reproducción usando el paquete multimedia (puede depender del visor PDF).
+
+IMPORTANTE:
+La reproducción de video embebido depende del visor PDF. En muchos sistemas,
+el método más estable es enlazar el archivo (o una URL) y reproducirlo externamente.
+
+------------------------------------------------------------
+Archivos requeridos
+------------------------------------------------------------
+
+1) main.tex
+2) Un video corto en MP4, por ejemplo:
+      media/demo.mp4
+3) (Opcional) Una imagen póster para representar el video:
+      fig/poster_video.png
+
+------------------------------------------------------------
+SOLUCIÓN A (RECOMENDADA): Enlace clicable al video (siempre funciona)
+------------------------------------------------------------
+
+------------------------------------------------------------
+Archivo: main.tex
+------------------------------------------------------------
+
+\documentclass[aspectratio=169]{beamer}
+
+% --------------------------------------------------------
+% Idioma y codificación (PDFLaTeX)
+% --------------------------------------------------------
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+
+\usetheme{metropolis}
+
+% Enlaces
+\usepackage{hyperref}
+% Figuras (para póster opcional)
+\usepackage{graphicx}
+
+\title{Ejercicio 07}
+\subtitle{Video externo con enlace (modo recomendado)}
+\author{Nombre del autor}
+\institute{Institución}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}{Video (enlace externo)}
+
+\begin{itemize}
+	\item Este video muestra el proceso/experimento en ejecución.
+	\item Se recomienda el enlace externo por compatibilidad con visores PDF.
+\end{itemize}
+
+\vspace{0.25cm}
+
+% Póster (opcional): imagen que representa al video
+\begin{center}
+	\includegraphics[width=0.75\textwidth]{fig/poster_video.png}
+\end{center}
+
+\vspace{0.15cm}
+
+\centering
+\href{run:media/demo.mp4}{\beamergotobutton{Reproducir video (MP4)}}
+
+\end{frame}
+
+\end{document}
+
+------------------------------------------------------------
+SOLUCIÓN B (ALTERNATIVA): Botón de reproducción con multimedia
+------------------------------------------------------------
+
+NOTA:
+Este método puede funcionar mejor con Adobe Acrobat Reader. En otros visores
+podría no reproducir. Úsalo solo si ya probaste compatibilidad.
+
+------------------------------------------------------------
+Archivo: main.tex
+------------------------------------------------------------
+
+\documentclass[aspectratio=169]{beamer}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+
+\usetheme{metropolis}
+
+% Paquete para multimedia (varía el soporte según visor)
+\usepackage{multimedia}
+\usepackage{graphicx}
+
+\title{Ejercicio 07}
+\subtitle{Video con botón (multimedia)}
+\author{Nombre del autor}
+\institute{Institución}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}{Video (multimedia)}
+
+\begin{itemize}
+	\item Este video ilustra el fenómeno que se describe en la presentación.
+	\item Si no se reproduce, usar alternativa: imagen + enlace externo.
+\end{itemize}
+
+\vspace{0.25cm}
+
+\begin{center}
+\movie[width=0.75\textwidth,showcontrols]{%
+\includegraphics[width=0.75\textwidth]{fig/poster_video.png}%
+}{media/demo.mp4}
+\end{center}
+
+\end{frame}
+
+\end{document}
+
+------------------------------------------------------------
+COMENTARIOS CLAVE DEL EJERCICIO
+------------------------------------------------------------
+
+1. Método A (enlace) es el más robusto:
+       \href{run:media/demo.mp4}{\beamergotobutton{...}}
+   El PDF abre el archivo MP4 con el reproductor del sistema.
+
+2. Método B (multimedia) intenta reproducir desde el PDF con:
+       \movie[...]{poster}{archivo.mp4}
+   Puede fallar según el visor PDF.
+
+3. Si el video no se reproduce:
+   - Anota el visor usado (Adobe Reader, Okular, Evince, navegador, etc.).
+   - Usa la alternativa recomendada: imagen póster + enlace externo.
+
+------------------------------------------------------------
+PASOS PARA EJECUTAR EL EJERCICIO (PROCESO NUMERADO)
+------------------------------------------------------------
+
+1. Crea carpetas (si no existen):
+       media/
+       fig/
+
+2. Coloca el video MP4 en:
+       media/demo.mp4
+
+3. (Opcional) Coloca una imagen póster en:
+       fig/poster_video.png
+   Si no tienes póster, puedes usar cualquier imagen representativa.
+
+4. Crea un archivo llamado:
+       main.tex
+
+5. Copia y pega UNA de las soluciones:
+       - Solución A (recomendada), o
+       - Solución B (si quieres probar reproducción embebida).
+
+6. Compila la presentación (PDFLaTeX):
+       - En TeXStudio: F5
+       - En Overleaf: pdfLaTeX y compilar
+       - En terminal (opcional):
+            pdflatex main.tex
+            pdflatex main.tex
+
+7. Prueba la reproducción:
+       - Abre el PDF en tu visor.
+       - Haz clic en el botón (Solución A) o en el póster (Solución B).
+
+8. Si no se reproduce:
+       - Documenta el visor usado.
+       - Mantén la alternativa: imagen + enlace externo (Solución A).
+
+------------------------------------------------------------
+RESULTADO ESPERADO
+------------------------------------------------------------
+
+- Un frame con texto breve que explica el propósito del video.
+- Un elemento visual (póster) y un mecanismo de reproducción/enlace.
+- Presentación compilada correctamente y lista para pruebas en el visor PDF.
+
+FIN DE LA SOLUCIÓN DEL EJERCICIO 07 – UNIDAD 8
