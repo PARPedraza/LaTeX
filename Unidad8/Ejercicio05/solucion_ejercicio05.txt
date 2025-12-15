@@ -1,19 +1,22 @@
 ===========================
 UNIDAD 8 – EJERCICIO 05
-Frame con revelado en dos etapas (overlays <1->, <2->)
+Fórmula clave + figura explicativa (Beamer)
 ===========================
 
-NOTA IMPORTANTE:
-En tu mensaje, el Ejercicio 05 aparece con el título “Fórmula clave + figura explicativa”.
-Sin embargo, en la organización que ya consolidamos para la Unidad 8:
+Este ejercicio muestra cómo integrar en una sola diapositiva:
+- 1–2 bullets (texto breve),
+- una fórmula clave centrada y legible,
+- una figura/diagrama con ancho controlado (ej. 0.8\textwidth),
+manteniendo un diseño limpio y entendible a distancia.
 
-- Ejercicio 04 = Fórmula clave + figura explicativa
-- Ejercicio 05 = Frame con dos etapas usando overlays (<1->, <2->)
+------------------------------------------------------------
+Archivos requeridos
+------------------------------------------------------------
 
-Para mantener coherencia con la numeración y el flujo didáctico de la Unidad 8,
-esta solución corresponde al EJERCICIO 05 (overlays en dos etapas).
-
-Si deseas, después puedo renombrar o alinear los títulos para que no haya confusión.
+1) main.tex
+2) Una imagen para la figura/diagrama, por ejemplo:
+      fig/figura_demo.pdf
+   (PDF recomendado si es vectorial; también puede ser PNG/JPG)
 
 ------------------------------------------------------------
 Archivo: main.tex
@@ -27,11 +30,14 @@ Archivo: main.tex
 \usepackage[spanish]{babel}
 \usepackage[utf8]{inputenc}
 
-% Tema opcional
+% Tema opcional (puedes cambiarlo por el que uses en tu libro)
 \usetheme{metropolis}
 
+% Figuras
+\usepackage{graphicx}
+
 \title{Ejercicio 05}
-\subtitle{Overlays en dos etapas con <1-> y <2->}
+\subtitle{Fórmula clave + figura explicativa}
 \author{Nombre del autor}
 \institute{Institución}
 \date{\today}
@@ -39,23 +45,29 @@ Archivo: main.tex
 \begin{document}
 
 % --------------------------------------------------------
-% Frame con revelado progresivo en dos etapas
+% Frame del ejercicio
 % --------------------------------------------------------
-\begin{frame}{Introducción gradual de un concepto}
+\begin{frame}{Fórmula clave y figura explicativa}
 
+% Texto breve (1–2 bullets)
 \begin{itemize}
-	\item<1-> \textbf{Idea base:} Una red neuronal aprende una función \(f(\mathbf{x})\) a partir de datos.
-	\item<2-> \textbf{Detalle:} El aprendizaje ajusta parámetros (\(\mathbf{w}, b\)) minimizando una pérdida \(L\).
+	\item La fórmula resume el modelo que se desea explicar.
+	\item La figura ilustra visualmente el proceso o el comportamiento descrito.
 \end{itemize}
 
-\vspace{0.3cm}
+\vspace{0.15cm}
 
-% Elemento visual opcional que aparece en la etapa 2
-\only<2->{
-\begin{block}{Mensaje clave}
-El público debe entender primero la idea general y después el detalle técnico.
-\end{block}
-}
+% Fórmula clave centrada y legible
+\begin{equation*}
+	\hat{y} = \sigma(\mathbf{w}^\top \mathbf{x} + b)
+\end{equation*}
+
+\vspace{0.10cm}
+
+% Figura/diagrama con ancho controlado y centrado
+\begin{center}
+	\includegraphics[width=0.8\textwidth]{fig/figura_demo.pdf}
+\end{center}
 
 \end{frame}
 
@@ -65,47 +77,47 @@ El público debe entender primero la idea general y después el detalle técnico
 COMENTARIOS CLAVE DEL EJERCICIO
 ------------------------------------------------------------
 
-1. Los overlays se controlan con especificadores como:
-       \item<1-> ...   (aparece desde la etapa 1 en adelante)
-       \item<2-> ...   (aparece desde la etapa 2 en adelante)
-
-2. \only<2->{...} muestra un bloque únicamente en la etapa 2.
-   Esto permite construir la diapositiva por capas sin duplicar frames.
-
-3. Esta técnica es preferible a múltiples \pause cuando se busca control fino,
-   especialmente en listas.
+1. Se limita el texto a 1–2 bullets para evitar saturación.
+2. La fórmula se centra con equation* (sin numeración) para mejor presentación.
+3. La figura se normaliza con un ancho homogéneo:
+       \includegraphics[width=0.8\textwidth]{...}
+4. Si el contenido no cabe:
+   - reduce el ancho (0.7\textwidth), o
+   - controla por altura:
+       \includegraphics[height=0.45\textheight]{...}
 
 ------------------------------------------------------------
 PASOS PARA EJECUTAR EL EJERCICIO (PROCESO NUMERADO)
 ------------------------------------------------------------
 
-1. Crea un archivo llamado:
+1. Crea una carpeta para figuras (si no existe):
+       fig/
+
+2. Coloca tu figura/diagrama dentro de fig/, por ejemplo:
+       fig/figura_demo.pdf
+
+3. Crea un archivo llamado:
        main.tex
 
-2. Copia y pega el contenido completo mostrado arriba dentro de main.tex.
+4. Copia y pega el contenido completo mostrado arriba dentro de main.tex.
 
-3. Compila la presentación:
+5. Compila la presentación:
        - En TeXStudio: compila con PDFLaTeX (F5)
        - En Overleaf: selecciona pdfLaTeX y compila
        - En terminal (opcional):
             pdflatex main.tex
             pdflatex main.tex
 
-4. Verifica el resultado en el PDF:
-       - Al avanzar (siguiente slide/step), debe aparecer primero la idea base.
-       - En el siguiente paso, aparece el detalle y el bloque “Mensaje clave”.
-
-5. (Opcional) Ajusta a más etapas:
-       - Cambia <2-> por <3->, <4->, etc.
-       - Agrega más \only<k->{...} si deseas revelar elementos adicionales.
+6. Verifica el resultado en el PDF:
+       - Fórmula centrada y legible.
+       - Figura centrada con ancho homogéneo (0.8\textwidth).
+       - Diapositiva sin saturación y entendible a distancia.
 
 ------------------------------------------------------------
 RESULTADO ESPERADO
 ------------------------------------------------------------
 
-- Un frame con dos etapas claras:
-    * Etapa 1: idea base
-    * Etapa 2: detalle + bloque de refuerzo
-- Presentación legible y con narrativa progresiva.
+- Un frame con diseño claro que integra texto breve + fórmula + figura normalizada.
+- Presentación compilada sin errores y lista para exposición.
 
 FIN DE LA SOLUCIÓN DEL EJERCICIO 05 – UNIDAD 8
