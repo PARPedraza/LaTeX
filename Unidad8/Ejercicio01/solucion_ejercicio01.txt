@@ -1,0 +1,135 @@
+===========================
+UNIDAD 8 – EJERCICIO 01
+Presentación Beamer básica (3 diapositivas)
+===========================
+
+Este ejercicio muestra la estructura mínima de una presentación en Beamer,
+organizada por secciones y frames. Se construyen 3 diapositivas:
+
+1) Introducción
+2) Contenido principal
+3) Conclusiones
+
+------------------------------------------------------------
+Archivo: main.tex
+------------------------------------------------------------
+
+\documentclass[aspectratio=169]{beamer}
+
+% --------------------------------------------------------
+% Idioma y codificación (PDFLaTeX)
+% --------------------------------------------------------
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+
+% --------------------------------------------------------
+% Información de portada (título, autor, institución, fecha)
+% --------------------------------------------------------
+\title{Presentación Beamer Básica}
+\subtitle{Estructura mínima con secciones y frames}
+\author{Nombre del autor}
+\institute{Nombre de la institución}
+\date{\today}
+
+\begin{document}
+
+% --------------------------------------------------------
+% Diapositiva de título (opcional pero recomendada)
+% --------------------------------------------------------
+\begin{frame}
+	\titlepage
+\end{frame}
+
+% --------------------------------------------------------
+% Sección: Introducción
+% --------------------------------------------------------
+\section{Introducción}
+
+\begin{frame}{Introducción}
+	\begin{itemize}
+		\item Contexto del tema a presentar.
+		\item Objetivo general de la exposición.
+		\item Estructura breve de la presentación.
+	\end{itemize}
+\end{frame}
+
+% --------------------------------------------------------
+% Sección: Contenido principal
+% --------------------------------------------------------
+\section{Contenido}
+
+\begin{frame}{Contenido principal}
+	\begin{itemize}
+		\item Idea clave 1 (concepto principal).
+		\item Idea clave 2 (método o enfoque).
+		\item Idea clave 3 (resultado o evidencia).
+	\end{itemize}
+\end{frame}
+
+% --------------------------------------------------------
+% Sección: Conclusiones
+% --------------------------------------------------------
+\section{Conclusiones}
+
+\begin{frame}{Conclusiones}
+	\begin{itemize}
+		\item Resumen de los puntos más importantes.
+		\item Conclusión principal (mensaje final).
+		\item Trabajo futuro o preguntas.
+	\end{itemize}
+\end{frame}
+
+\end{document}
+
+------------------------------------------------------------
+COMENTARIOS CLAVE DEL EJERCICIO
+------------------------------------------------------------
+
+1. Beamer crea diapositivas usando frames:
+       \begin{frame}{Título} ... \end{frame}
+
+2. Usar \section ayuda a organizar la presentación y habilita funciones como:
+   - tabla de contenidos (si se agrega)
+   - navegación automática en algunos temas
+
+3. La diapositiva de título (\titlepage) es opcional, pero es estándar en
+   presentaciones académicas.
+
+4. Para presentaciones en pantalla panorámica se recomienda:
+       \documentclass[aspectratio=169]{beamer}
+
+------------------------------------------------------------
+PASOS PARA EJECUTAR EL EJERCICIO (PROCESO NUMERADO)
+------------------------------------------------------------
+
+1. Crea un archivo llamado:
+       main.tex
+
+2. Copia y pega el contenido completo mostrado arriba dentro de main.tex.
+
+3. Compila el documento (PDFLaTeX):
+       - En TeXStudio: presiona F5 (o Compilar)
+       - En Overleaf: selecciona "pdfLaTeX" y compila
+       - En terminal (opcional):
+            pdflatex main.tex
+            pdflatex main.tex
+
+4. Verifica el resultado en el PDF:
+       - Debe aparecer una diapositiva de título (si la mantienes).
+       - Deben existir 3 diapositivas con títulos:
+            Introducción
+            Contenido principal
+            Conclusiones
+
+5. (Opcional) Si quieres exactamente 3 diapositivas SIN portada:
+       - Elimina el frame que contiene \titlepage.
+
+------------------------------------------------------------
+RESULTADO ESPERADO
+------------------------------------------------------------
+
+- Presentación Beamer funcional con 3 diapositivas principales (más portada opcional).
+- Archivo organizado por secciones y frames.
+- Compilación correcta sin errores.
+
+FIN DE LA SOLUCIÓN DEL EJERCICIO 01 – UNIDAD 8
