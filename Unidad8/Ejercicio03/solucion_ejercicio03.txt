@@ -1,0 +1,122 @@
+===========================
+UNIDAD 8 – EJERCICIO 03
+Uso de frames, bloques y columnas (Beamer)
+===========================
+
+Este ejercicio muestra cómo estructurar una diapositiva Beamer con:
+- un frame con título,
+- al menos un block/alertblock,
+- contenido en dos columnas usando columns,
+manteniendo texto breve y legible.
+
+------------------------------------------------------------
+Archivo: main.tex
+------------------------------------------------------------
+
+\documentclass[aspectratio=169]{beamer}
+
+% --------------------------------------------------------
+% Idioma y codificación (PDFLaTeX)
+% --------------------------------------------------------
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+
+% (Tema opcional; puedes cambiarlo por el que uses en tu libro)
+\usetheme{metropolis}
+
+\begin{document}
+
+% --------------------------------------------------------
+% Frame principal del ejercicio
+% --------------------------------------------------------
+\begin{frame}{Frames, bloques y columnas}
+
+% Dos columnas: texto a la izquierda, bloque resaltado a la derecha
+\begin{columns}[T] % [T] alinea columnas en la parte superior
+
+% -------------------------
+% Columna izquierda
+% -------------------------
+\begin{column}{0.55\textwidth}
+	\begin{itemize}
+		\item Una diapositiva debe comunicar una idea principal.
+		\item Las columnas ayudan a comparar o combinar texto + figura.
+		\item Mantén bullets cortos y claros.
+	\end{itemize}
+\end{column}
+
+% -------------------------
+% Columna derecha
+% -------------------------
+\begin{column}{0.45\textwidth}
+	\begin{block}{Bloque informativo}
+		Usa \texttt{block} para definiciones o puntos clave.
+	\end{block}
+	
+	\begin{alertblock}{Idea clave}
+		Evita saturar la diapositiva con demasiado contenido.
+	\end{alertblock}
+\end{column}
+
+\end{columns}
+
+\end{frame}
+
+\end{document}
+
+------------------------------------------------------------
+COMENTARIOS CLAVE DEL EJERCICIO
+------------------------------------------------------------
+
+1. Un frame se define con:
+       \begin{frame}{Título} ... \end{frame}
+
+2. Las columnas se crean con:
+       \begin{columns}[T]
+         \begin{column}{0.55\textwidth} ... \end{column}
+         \begin{column}{0.45\textwidth} ... \end{column}
+       \end{columns}
+
+   Los anchos deben sumar <= 1.0\textwidth (o quedar ligeramente por debajo).
+
+3. Los bloques ayudan a jerarquizar información:
+       \begin{block}{...} ... \end{block}
+       \begin{alertblock}{...} ... \end{alertblock}
+
+4. El modificador [T] alinea el contenido de ambas columnas arriba,
+   lo que suele dar un resultado más limpio.
+
+------------------------------------------------------------
+PASOS PARA EJECUTAR EL EJERCICIO (PROCESO NUMERADO)
+------------------------------------------------------------
+
+1. Crea un archivo llamado:
+       main.tex
+
+2. Copia y pega el contenido completo mostrado arriba dentro de main.tex.
+
+3. Compila la presentación:
+       - En TeXStudio: compila con PDFLaTeX (F5)
+       - En Overleaf: selecciona pdfLaTeX y compila
+       - En terminal (opcional):
+            pdflatex main.tex
+            pdflatex main.tex
+
+4. Verifica el resultado en el PDF:
+       - Debe existir una diapositiva con título: “Frames, bloques y columnas”.
+       - Deben verse dos columnas: bullets a la izquierda, bloques a la derecha.
+       - El texto debe ser breve y legible, sin saturación.
+
+5. (Opcional) Ajusta proporciones:
+       - Cambia 0.55/0.45 por 0.6/0.4 si quieres más espacio al texto.
+       - Mantén siempre suma <= 1.0 para evitar desbordamientos.
+
+------------------------------------------------------------
+RESULTADO ESPERADO
+------------------------------------------------------------
+
+- Diapositiva clara y equilibrada con dos columnas.
+- Uso correcto de block y alertblock.
+- Presentación compilada sin errores y con buena legibilidad.
+
+FIN DE LA SOLUCIÓN DEL EJERCICIO 03 – UNIDAD 8
