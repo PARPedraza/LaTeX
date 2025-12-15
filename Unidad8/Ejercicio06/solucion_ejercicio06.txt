@@ -1,0 +1,102 @@
+===========================
+UNIDAD 8 – EJERCICIO 06
+Frame con revelado en dos etapas (overlays <1->, <2->)
+===========================
+
+Este ejercicio muestra cómo usar overlays para revelar contenido en dos pasos,
+guiando la atención del público:
+
+- Etapa 1: idea base
+- Etapa 2: detalle o ejemplo
+
+------------------------------------------------------------
+Archivo: main.tex
+------------------------------------------------------------
+
+\documentclass[aspectratio=169]{beamer}
+
+% --------------------------------------------------------
+% Idioma y codificación (PDFLaTeX)
+% --------------------------------------------------------
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+
+% Tema opcional
+\usetheme{metropolis}
+
+\title{Ejercicio 06}
+\subtitle{Overlays en dos etapas}
+\author{Nombre del autor}
+\institute{Institución}
+\date{\today}
+
+\begin{document}
+
+% --------------------------------------------------------
+% Frame con revelado progresivo en dos etapas
+% --------------------------------------------------------
+\begin{frame}{Introducción gradual de un concepto}
+
+\begin{itemize}
+	\item<1-> \textbf{Idea base:} Un modelo aprende una función \(f(\mathbf{x})\) a partir de datos.
+	\item<2-> \textbf{Detalle:} El aprendizaje ajusta parámetros minimizando una pérdida \(L(\theta)\).
+\end{itemize}
+
+\vspace{0.25cm}
+
+% Refuerzo visual en la segunda etapa
+\only<2->{
+\begin{block}{Mensaje clave}
+Primero presenta el concepto general, después agrega el detalle técnico o un ejemplo.
+\end{block}
+}
+
+\end{frame}
+
+\end{document}
+
+------------------------------------------------------------
+COMENTARIOS CLAVE DEL EJERCICIO
+------------------------------------------------------------
+
+1. Los overlays se controlan con especificadores:
+       \item<1-> ...   (aparece desde la etapa 1)
+       \item<2-> ...   (aparece desde la etapa 2)
+
+2. \only<2->{...} permite mostrar un bloque solo en la segunda etapa,
+   útil para reforzar el mensaje sin duplicar frames.
+
+3. Esta técnica ofrece más control que usar múltiples \pause en listas.
+
+------------------------------------------------------------
+PASOS PARA EJECUTAR EL EJERCICIO (PROCESO NUMERADO)
+------------------------------------------------------------
+
+1. Crea un archivo llamado:
+       main.tex
+
+2. Copia y pega el contenido completo mostrado arriba dentro de main.tex.
+
+3. Compila la presentación:
+       - En TeXStudio: compila con PDFLaTeX (F5)
+       - En Overleaf: selecciona pdfLaTeX y compila
+       - En terminal (opcional):
+            pdflatex main.tex
+            pdflatex main.tex
+
+4. Verifica el resultado en el PDF:
+       - En el primer “avance” aparece la idea base.
+       - En el segundo “avance” aparece el detalle y el bloque de refuerzo.
+
+5. (Opcional) Extiende a más etapas:
+       - Agrega más items con <3->, <4->, etc.
+       - Agrega más \only<k->{...} para contenido por capas.
+
+------------------------------------------------------------
+RESULTADO ESPERADO
+------------------------------------------------------------
+
+- Un frame con dos pasos claros, útil para explicar gradualmente un concepto.
+- Presentación legible, sin saturación y con narrativa controlada.
+
+FIN DE LA SOLUCIÓN DEL EJERCICIO 06 – UNIDAD 8
