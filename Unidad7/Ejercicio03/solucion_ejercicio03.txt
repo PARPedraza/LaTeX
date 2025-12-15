@@ -1,0 +1,117 @@
+===========================
+UNIDAD 7 – EJERCICIO 03
+Tipografía personalizada para títulos
+===========================
+
+Este ejercicio muestra cómo cambiar la tipografía (y estilo visual) de los títulos
+(\chapter, \section, \subsection) sin modificar la tipografía del cuerpo del texto.
+Se usa el paquete titlesec para redefinir únicamente el formato de los encabezados.
+
+------------------------------------------------------------
+Archivo: main.tex
+------------------------------------------------------------
+
+\documentclass[12pt]{book}
+
+\usepackage[spanish]{babel}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+
+% --------------------------------------------------------
+% Títulos personalizados (sin tocar el cuerpo del texto)
+% --------------------------------------------------------
+\usepackage{titlesec}
+
+% (1) Capítulos: Sans-serif + negrita + tamaño grande
+\titleformat{\chapter}
+  {\normalfont\sffamily\bfseries\Huge} % Formato del título
+  {\thechapter}{1em}{}                % Número del capítulo y separación
+
+% (2) Secciones: Sans-serif + negrita + tamaño mediano
+\titleformat{\section}
+  {\normalfont\sffamily\bfseries\Large}
+  {\thesection}{1em}{}
+
+% (3) Subsecciones: Sans-serif + negrita + tamaño menor
+\titleformat{\subsection}
+  {\normalfont\sffamily\bfseries\large}
+  {\thesubsection}{1em}{}
+
+% --------------------------------------------------------
+% Texto de prueba
+% --------------------------------------------------------
+\usepackage{lipsum}
+
+\begin{document}
+
+\tableofcontents
+
+\chapter{Capítulo de prueba}
+\section{Sección de prueba}
+\subsection{Subsección de prueba}
+
+Este párrafo pertenece al cuerpo del texto y conserva la tipografía normal del documento.
+Solo los títulos fueron cambiados a una tipografía sans-serif con mayor énfasis visual.
+
+\lipsum[1-3]
+
+\section{Otra sección}
+\lipsum[4-6]
+
+\chapter{Segundo capítulo}
+\section{Nueva sección}
+\lipsum[7-9]
+
+\end{document}
+
+------------------------------------------------------------
+COMENTARIOS CLAVE DEL EJERCICIO
+------------------------------------------------------------
+
+1. El cuerpo del texto NO se modifica porque no se cambia ninguna fuente global
+   (por ejemplo, no se carga fontspec ni se redefine \familydefault).
+
+2. Los cambios se aplican únicamente a los encabezados mediante titlesec:
+       \titleformat{comando}{formato}{etiqueta}{separación}{antes}
+
+3. Se usa \sffamily en los títulos para que destaquen, mientras el texto normal
+   permanece en la familia por defecto del documento.
+
+4. Si deseas aún más diferenciación sin romper coherencia, puedes ajustar:
+   - tamaños (\Huge, \Large, \large)
+   - espaciados con \titlespacing (opcional)
+   - estilo (cursiva, versalitas, etc.)
+
+------------------------------------------------------------
+PASOS PARA EJECUTAR EL EJERCICIO (PROCESO NUMERADO)
+------------------------------------------------------------
+
+1. Crea un archivo llamado:
+       main.tex
+
+2. Copia y pega el contenido completo mostrado arriba dentro de main.tex.
+
+3. Compila el documento (flujo normal con PDFLaTeX):
+       - En TeXStudio: presiona F5 (o Compilar)
+       - En terminal (opcional):
+            pdflatex main.tex
+            pdflatex main.tex
+
+4. Verifica el resultado en el PDF:
+       - Los títulos (capítulo/sección/subsección) deben verse en sans-serif y negrita.
+       - El cuerpo del texto debe conservar la tipografía estándar (serif).
+
+5. (Opcional) Ajusta el estilo de títulos sin tocar el texto:
+       - Cambia \sffamily por \rmfamily (serif) o \ttfamily (monoespaciada).
+       - Cambia tamaños: \Huge / \huge / \Large / \large.
+       - Agrega espaciado con:
+            \titlespacing{\chapter}{0pt}{-10pt}{20pt}
+
+------------------------------------------------------------
+RESULTADO ESPERADO
+------------------------------------------------------------
+
+- Los títulos del documento resaltan visualmente con una familia tipográfica distinta.
+- El cuerpo del texto permanece sin cambios, conservando la fuente original.
+- Se mantiene coherencia tipográfica al usar una jerarquía clara y consistente.
+
+FIN DE LA SOLUCIÓN DEL EJERCICIO 03 – UNIDAD 7
