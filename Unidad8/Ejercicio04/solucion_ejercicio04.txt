@@ -1,0 +1,137 @@
+===========================
+UNIDAD 8 – EJERCICIO 04
+Fórmula clave + figura explicativa (Beamer)
+===========================
+
+NOTA IMPORTANTE:
+En tu mensaje el “Ejercicio 04” aparece con el mismo título y actividad del Ejercicio 03.
+Sin embargo, en la estructura de la Unidad 8 que venimos siguiendo, el Ejercicio 04
+corresponde a:
+
+- Crear una diapositiva con una FÓRMULA clave y una FIGURA explicativa,
+  cuidando ancho homogéneo, centrado y legibilidad.
+
+Por eso, esta solución implementa exactamente:
+- una fórmula destacada,
+- una figura a 0.8\textwidth,
+- texto breve que conecte figura y fórmula,
+- frame claro y equilibrado.
+
+------------------------------------------------------------
+Archivos requeridos
+------------------------------------------------------------
+
+1) main.tex
+2) Una imagen para la figura, por ejemplo:
+      fig/figura_demo.pdf
+   (PDF recomendado si es vectorial; también puede ser PNG/JPG)
+
+------------------------------------------------------------
+Archivo: main.tex
+------------------------------------------------------------
+
+\documentclass[aspectratio=169]{beamer}
+
+% --------------------------------------------------------
+% Idioma y codificación (PDFLaTeX)
+% --------------------------------------------------------
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+
+% Tema opcional
+\usetheme{metropolis}
+
+% Para insertar figuras
+\usepackage{graphicx}
+
+\title{Ejercicio 04}
+\subtitle{Fórmula clave + figura explicativa}
+\author{Nombre del autor}
+\institute{Institución}
+\date{\today}
+
+\begin{document}
+
+% --------------------------------------------------------
+% Frame con fórmula y figura (diseño claro)
+% --------------------------------------------------------
+\begin{frame}{Fórmula clave y figura explicativa}
+
+% Texto breve (1–2 bullets)
+\begin{itemize}
+	\item La siguiente expresión resume el comportamiento del modelo.
+	\item La figura ilustra el proceso o la evidencia asociada a la fórmula.
+\end{itemize}
+
+\vspace{0.2cm}
+
+% Fórmula clave centrada y legible
+\begin{equation*}
+	\hat{y} = \sigma(\mathbf{w}^\top \mathbf{x} + b)
+\end{equation*}
+
+\vspace{0.2cm}
+
+% Figura explicativa (ancho homogéneo y centrado)
+\begin{center}
+	\includegraphics[width=0.8\textwidth]{fig/figura_demo.pdf}
+\end{center}
+
+\end{frame}
+
+\end{document}
+
+------------------------------------------------------------
+COMENTARIOS CLAVE DEL EJERCICIO
+------------------------------------------------------------
+
+1. La fórmula se coloca en un entorno matemático (equation*), centrada y limpia:
+       \begin{equation*} ... \end{equation*}
+
+2. La figura se normaliza con un ancho homogéneo recomendado:
+       \includegraphics[width=0.8\textwidth]{...}
+
+3. Se mantiene texto breve (1–2 bullets) para no saturar la diapositiva.
+
+4. Si la figura es alta y no cabe, reduce el ancho (por ejemplo, 0.7\textwidth)
+   o usa:
+       \includegraphics[height=0.45\textheight]{...}
+
+------------------------------------------------------------
+PASOS PARA EJECUTAR EL EJERCICIO (PROCESO NUMERADO)
+------------------------------------------------------------
+
+1. Crea una carpeta para figuras (si no existe):
+       fig/
+
+2. Coloca una imagen dentro de fig/, por ejemplo:
+       fig/figura_demo.pdf
+   Si usas otro nombre o formato, actualiza la ruta en \includegraphics.
+
+3. Crea un archivo llamado:
+       main.tex
+
+4. Copia y pega el contenido completo mostrado arriba dentro de main.tex.
+
+5. Compila la presentación:
+       - En TeXStudio: compila con PDFLaTeX (F5)
+       - En Overleaf: selecciona pdfLaTeX y compila
+       - En terminal (opcional):
+            pdflatex main.tex
+            pdflatex main.tex
+
+6. Verifica el resultado en el PDF:
+       - Debe verse la fórmula centrada y con tamaño legible.
+       - Debe verse la figura centrada con ancho homogéneo (0.8\textwidth).
+       - El texto debe ser breve y la diapositiva no debe verse saturada.
+
+------------------------------------------------------------
+RESULTADO ESPERADO
+------------------------------------------------------------
+
+- Frame claro y equilibrado con:
+    * 1–2 bullets
+    * una fórmula clave centrada
+    * una figura explicativa normalizada (0.8\textwidth)
+
+FIN DE LA SOLUCIÓN DEL EJERCICIO 04 – UNIDAD 8
