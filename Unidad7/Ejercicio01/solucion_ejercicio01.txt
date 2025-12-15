@@ -1,0 +1,124 @@
+===========================
+UNIDAD 7 – EJERCICIO 01
+Márgenes distintos para portada y contenido
+===========================
+
+Este ejercicio muestra cómo aplicar márgenes diferentes en la portada
+y después regresar automáticamente a los márgenes estándar del documento
+utilizando los comandos \newgeometry y \restoregeometry del paquete geometry.
+
+------------------------------------------------------------
+Archivo: main.tex
+------------------------------------------------------------
+
+\documentclass[12pt]{book}
+
+% --------------------------------------------------------
+% Paquete para control de márgenes (márgenes base del documento)
+% --------------------------------------------------------
+\usepackage[a4paper,margin=2.5cm]{geometry}
+
+\usepackage{graphicx}
+\usepackage{lipsum} % Texto de prueba (opcional)
+
+\begin{document}
+
+% --------------------------------------------------------
+% Portada con márgenes personalizados
+% (Aquí se modifica SOLO la portada)
+% --------------------------------------------------------
+\newgeometry{
+	top=3.5cm,
+	bottom=3.5cm,
+	left=4cm,
+	right=4cm
+}
+
+\begin{titlepage}
+	\centering
+	
+	\vspace*{2cm}
+	{\Huge \bfseries Título del Documento \par}
+	
+	\vspace{1cm}
+	{\Large Subtítulo del documento \par}
+	
+	\vfill
+	
+	{\large Nombre del Autor \par}
+	{\large Institución \par}
+	{\large \today \par}
+\end{titlepage}
+
+% --------------------------------------------------------
+% Restaurar márgenes originales para el contenido
+% --------------------------------------------------------
+\restoregeometry
+
+% --------------------------------------------------------
+% Contenido principal (ya con márgenes estándar)
+% --------------------------------------------------------
+\chapter{Introducción}
+
+Este capítulo utiliza los márgenes definidos originalmente con el paquete
+\texttt{geometry}. La portada tuvo márgenes distintos gracias al uso de
+\verb|\newgeometry| y \verb|\restoregeometry|.
+
+\lipsum[1-3]
+
+\chapter{Segundo capítulo}
+
+El resto del documento mantiene un diseño consistente sin redefinir
+márgenes manualmente en cada página.
+
+\lipsum[4-6]
+
+\end{document}
+
+------------------------------------------------------------
+COMENTARIOS CLAVE DEL EJERCICIO
+------------------------------------------------------------
+
+1. Los márgenes “estándar” del documento se definen una sola vez en el preámbulo:
+       \usepackage[a4paper,margin=2.5cm]{geometry}
+
+2. \newgeometry{...} sobrescribe temporalmente esos márgenes a partir de ese punto,
+   por lo que es ideal para portada, prólogos o secciones especiales.
+
+3. \restoregeometry regresa automáticamente al layout original definido al cargar
+   geometry. Esto evita inconsistencias y hace el documento fácil de mantener.
+
+4. La portada está dentro de titlepage, pero lo importante es que el cambio de
+   márgenes ocurre antes de la portada y se restaura inmediatamente después.
+
+------------------------------------------------------------
+PASOS PARA EJECUTAR EL EJERCICIO (PROCESO NUMERADO)
+------------------------------------------------------------
+
+1. Crea un archivo llamado:
+       main.tex
+
+2. Copia y pega el contenido completo mostrado arriba dentro de main.tex.
+
+3. Compila el documento (flujo normal con PDFLaTeX):
+       - En TeXStudio: presiona F5 (o Compilar)
+       - En terminal (opcional):
+            pdflatex main.tex
+            pdflatex main.tex
+
+4. Verifica el resultado en el PDF:
+       - La portada debe tener márgenes más amplios (izq/der 4 cm, sup/inf 3.5 cm).
+       - Los capítulos deben regresar al margen estándar de 2.5 cm.
+
+5. (Opcional) Ajusta los valores de \newgeometry{...} para probar distintas
+   configuraciones de portada y observa cómo el contenido permanece intacto.
+
+------------------------------------------------------------
+RESULTADO ESPERADO
+------------------------------------------------------------
+
+- La portada aparece con márgenes personalizados (diferentes al resto del documento).
+- A partir del Capítulo 1, el documento vuelve automáticamente a márgenes estándar
+  (2.5 cm), sin necesidad de redefinirlos.
+
+FIN DE LA SOLUCIÓN DEL EJERCICIO 01 – UNIDAD 7
