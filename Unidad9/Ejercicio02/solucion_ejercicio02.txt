@@ -1,0 +1,92 @@
+===========================
+UNIDAD 9 – EJERCICIO 02
+Proyecto espejo en otra plataforma
+===========================
+
+Este ejercicio muestra cómo exportar un proyecto desde Overleaf,
+importarlo en otra plataforma y documentar diferencias de compilación.
+
+------------------------------------------------------------
+Archivo: main.tex (proyecto de prueba portable)
+------------------------------------------------------------
+
+\documentclass{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\title{Unidad 9 -- Ejercicio 02}
+\author{Autor}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Prueba de compatibilidad}
+
+Este documento sirve para comparar compilaci\'on entre plataformas.
+Incluye texto, una lista y una figura opcional.
+
+\begin{itemize}
+  \item Compilaci\'on correcta sin cambios.
+  \item Revisar advertencias de paquetes.
+  \item Revisar diferencias de tipograf\'ia o saltos.
+\end{itemize}
+
+\medskip
+\noindent
+\textbf{Figura (opcional):}
+Si no tienes una imagen, comenta el bloque siguiente.
+
+\begin{center}
+  \includegraphics[width=0.6\textwidth]{figura_demo.png}
+\end{center}
+
+\end{document}
+
+------------------------------------------------------------
+ARCHIVO ADICIONAL (opcional): figura_demo.png
+------------------------------------------------------------
+
+- Agrega cualquier imagen PNG con ese nombre en la raíz del proyecto.
+- Si no agregas imagen, comenta el bloque \includegraphics para evitar error.
+
+------------------------------------------------------------
+PROCESO PARA EJECUTAR EL EJERCICIO (PASOS NUMERADOS)
+------------------------------------------------------------
+
+1. En Overleaf, crea un proyecto nuevo (o usa uno existente simple).
+
+2. Copia el main.tex anterior en tu proyecto.
+
+3. (Opcional) Sube una imagen llamada:
+      figura_demo.png
+   para probar también manejo de archivos.
+
+4. Compila en Overleaf y confirma que el PDF se genera correctamente.
+
+5. Exporta el proyecto como ZIP:
+      Menu -> Download -> Source (ZIP)
+
+6. Abre otra plataforma online (por ejemplo, Papeeria/Authorea u otra):
+   - Crea un proyecto nuevo
+   - Importa el ZIP o sube los archivos manualmente
+
+7. Compila en la segunda plataforma y documenta:
+   - ¿Compiló sin cambios?
+   - ¿Hubo warnings/errores por paquetes o fuentes?
+   - ¿Cambió el PDF (saltos, márgenes, tamaño de letra, figura)?
+
+8. Escribe un breve reporte (5–10 líneas) con:
+   - Plataforma usada
+   - Resultado de compilación
+   - Diferencias observadas
+
+------------------------------------------------------------
+RESULTADO ESPERADO
+------------------------------------------------------------
+
+- Un proyecto espejo compilado en otra plataforma.
+- Un listado breve de diferencias o confirmación de equivalencia.
+
+FIN DE LA SOLUCIÓN DEL EJERCICIO 02 – UNIDAD 9
