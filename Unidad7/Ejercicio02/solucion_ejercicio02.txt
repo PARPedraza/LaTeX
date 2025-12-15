@@ -1,0 +1,154 @@
+===========================
+UNIDAD 7 – EJERCICIO 02
+Encabezados personalizados en páginas pares e impares
+===========================
+
+Este ejercicio muestra cómo configurar encabezados y pies de página con el paquete fancyhdr
+para documentos a doble cara, de modo que:
+
+- En páginas impares se muestre el título del capítulo.
+- En páginas pares se muestre el título de la sección.
+- La numeración de página quede alineada correctamente.
+
+------------------------------------------------------------
+Archivo: main.tex
+------------------------------------------------------------
+
+\documentclass[12pt,twoside]{book}
+
+\usepackage[spanish]{babel}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+
+% --------------------------------------------------------
+% Encabezados/Pies personalizados
+% --------------------------------------------------------
+\usepackage{fancyhdr}
+
+% (Opcional pero recomendable) Ajustes de altura del encabezado
+\setlength{\headheight}{14.5pt}
+
+% Activar estilo fancy en todo el documento
+\pagestyle{fancy}
+
+% Limpiar encabezados/pies por defecto
+\fancyhf{}
+
+% Quitar línea de encabezado (opcional; comenta si la quieres)
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% --------------------------------------------------------
+% Marcas automáticas (capítulo/sección)
+% --------------------------------------------------------
+% LaTeX define:
+%   \leftmark  -> Capítulo (Chapter)
+%   \rightmark -> Sección (Section)
+%
+% Para que \rightmark se actualice con \section, redefinimos \sectionmark.
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+
+% --------------------------------------------------------
+% Encabezados:
+% - Páginas pares (Lado izquierdo del libro): mostrar SECCIÓN
+% - Páginas impares (Lado derecho del libro): mostrar CAPÍTULO
+% --------------------------------------------------------
+\fancyhead[LE]{\nouppercase{\rightmark}} % Left header on Even pages
+\fancyhead[RO]{\nouppercase{\leftmark}}  % Right header on Odd pages
+
+% --------------------------------------------------------
+% Numeración de página:
+% - Páginas pares: número a la izquierda (LE)
+% - Páginas impares: número a la derecha (RO)
+% --------------------------------------------------------
+\fancyfoot[LE,RO]{\thepage}
+
+% --------------------------------------------------------
+% Documento de prueba (varias páginas)
+% --------------------------------------------------------
+\usepackage{lipsum}
+
+\begin{document}
+
+\frontmatter
+\tableofcontents
+
+\mainmatter
+
+\chapter{Primer capítulo de prueba}
+\section{Introducción}
+\lipsum[1-6]
+
+\section{Marco teórico}
+\lipsum[7-12]
+
+\chapter{Segundo capítulo de prueba}
+\section{Metodología}
+\lipsum[13-18]
+
+\section{Resultados}
+\lipsum[19-24]
+
+\end{document}
+
+------------------------------------------------------------
+COMENTARIOS CLAVE DEL EJERCICIO
+------------------------------------------------------------
+
+1. Es importante compilar en modo a doble cara para que existan páginas pares/impares:
+       \documentclass[...,twoside]{book}
+
+2. fancyhdr se activa con:
+       \pagestyle{fancy}
+   y se limpian encabezados/pies por defecto con:
+       \fancyhf{}
+
+3. \leftmark normalmente contiene el título del capítulo.
+   \rightmark se usa para la sección, pero para asegurarlo se redefine:
+       \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+
+4. Se fuerza el texto “sin mayúsculas automáticas” con:
+       \nouppercase{...}
+   ya que book suele convertir encabezados a mayúsculas.
+
+5. La numeración de página se coloca en el pie:
+       \fancyfoot[LE,RO]{\thepage}
+   para que quede a la izquierda en pares y a la derecha en impares.
+
+------------------------------------------------------------
+PASOS PARA EJECUTAR EL EJERCICIO (PROCESO NUMERADO)
+------------------------------------------------------------
+
+1. Crea un archivo llamado:
+       main.tex
+
+2. Copia y pega el contenido completo mostrado arriba dentro de main.tex.
+
+3. Compila el documento (flujo normal con PDFLaTeX):
+       - En TeXStudio: presiona F5 (o Compilar)
+       - En terminal (opcional):
+            pdflatex main.tex
+            pdflatex main.tex
+
+4. Verifica el resultado en el PDF:
+       - En páginas impares (derecha): debe aparecer el título del capítulo.
+       - En páginas pares (izquierda): debe aparecer el título de la sección.
+       - El número de página debe estar:
+            * a la derecha en impares
+            * a la izquierda en pares
+
+5. Si el encabezado se encima o aparece un warning, ajusta:
+       \setlength{\headheight}{...}
+   (por ejemplo, 14.5pt o 16pt).
+
+------------------------------------------------------------
+RESULTADO ESPERADO
+------------------------------------------------------------
+
+- Encabezados dinámicos:
+    * Impares: “Capítulo ...”
+    * Pares: “Sección ...”
+- Numeración alineada correctamente:
+    * Pares: esquina inferior izquierda
+    * Impares: esquina inferior derecha
+
+FIN DE LA SOLUCIÓN DEL EJERCICIO 02 – UNIDAD 7
