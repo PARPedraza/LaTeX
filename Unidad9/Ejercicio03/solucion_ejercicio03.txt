@@ -1,0 +1,114 @@
+===========================
+UNIDAD 9 – EJERCICIO 03
+Primer repositorio con GitHub (LaTeX)
+===========================
+
+Este ejercicio muestra cómo crear un repositorio, subir un proyecto LaTeX
+y hacer el primer commit con mensajes claros.
+
+------------------------------------------------------------
+Estructura recomendada del proyecto
+------------------------------------------------------------
+
+Proyecto_LaTeX/
+  main.tex
+  fig/
+    (imágenes opcionales)
+  bib/
+    referencias.bib (opcional)
+
+------------------------------------------------------------
+Archivo: main.tex (mínimo para versionar)
+------------------------------------------------------------
+
+\documentclass{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+
+\title{Unidad 9 -- Ejercicio 03}
+\author{Autor}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Versión inicial}
+
+Este archivo se usar\'a para el primer commit del repositorio.
+La idea es verificar que:
+(1) la estructura se conserva,
+(2) el historial registra commits,
+(3) el proyecto puede crecer con m\'as archivos.
+
+\end{document}
+
+------------------------------------------------------------
+Archivo: .gitignore (recomendado)
+------------------------------------------------------------
+
+# Archivos temporales LaTeX
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+
+------------------------------------------------------------
+PROCESO PARA EJECUTAR EL EJERCICIO (PASOS NUMERADOS)
+------------------------------------------------------------
+
+1. Crea una carpeta local con la estructura mínima:
+      Proyecto_LaTeX/main.tex
+
+2. (Opcional pero recomendado) Crea el archivo .gitignore con el contenido anterior.
+
+3. Abre una terminal en la carpeta Proyecto_LaTeX y ejecuta:
+      git init
+
+4. Agrega archivos al stage:
+      git add .
+
+5. Realiza el primer commit:
+      git commit -m "Versión inicial del proyecto LaTeX (Unidad 9)"
+
+6. En GitHub (web), crea un repositorio nuevo (vacío), por ejemplo:
+      latex-unidad9
+
+7. Vincula el repositorio remoto (GitHub te mostrará el comando exacto),
+   por ejemplo:
+      git remote add origin https://github.com/USUARIO/latex-unidad9.git
+
+8. Sube la rama al remoto:
+      git branch -M main
+      git push -u origin main
+
+9. Verifica en GitHub:
+   - que main.tex aparece
+   - que la estructura se conserva
+   - que el historial muestra tu commit y mensaje
+
+------------------------------------------------------------
+ALTERNATIVA (si lo haces desde Overleaf)
+------------------------------------------------------------
+
+1. Crea repositorio en GitHub.
+2. En Overleaf, usa la opción de sincronización con GitHub si tu plan lo permite,
+   o descarga el ZIP y súbelo al repo desde local usando los pasos anteriores.
+
+------------------------------------------------------------
+RESULTADO ESPERADO
+------------------------------------------------------------
+
+- Repositorio en GitHub con main.tex (y .gitignore si lo agregaste).
+- Primer commit visible con mensaje claro.
+- Estructura de carpetas preservada.
+
+FIN DE LA SOLUCIÓN DEL EJERCICIO 03 – UNIDAD 9
