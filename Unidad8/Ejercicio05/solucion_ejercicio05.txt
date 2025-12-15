@@ -1,0 +1,111 @@
+===========================
+UNIDAD 8 – EJERCICIO 05
+Frame con revelado en dos etapas (overlays <1->, <2->)
+===========================
+
+NOTA IMPORTANTE:
+En tu mensaje, el Ejercicio 05 aparece con el título “Fórmula clave + figura explicativa”.
+Sin embargo, en la organización que ya consolidamos para la Unidad 8:
+
+- Ejercicio 04 = Fórmula clave + figura explicativa
+- Ejercicio 05 = Frame con dos etapas usando overlays (<1->, <2->)
+
+Para mantener coherencia con la numeración y el flujo didáctico de la Unidad 8,
+esta solución corresponde al EJERCICIO 05 (overlays en dos etapas).
+
+Si deseas, después puedo renombrar o alinear los títulos para que no haya confusión.
+
+------------------------------------------------------------
+Archivo: main.tex
+------------------------------------------------------------
+
+\documentclass[aspectratio=169]{beamer}
+
+% --------------------------------------------------------
+% Idioma y codificación (PDFLaTeX)
+% --------------------------------------------------------
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+
+% Tema opcional
+\usetheme{metropolis}
+
+\title{Ejercicio 05}
+\subtitle{Overlays en dos etapas con <1-> y <2->}
+\author{Nombre del autor}
+\institute{Institución}
+\date{\today}
+
+\begin{document}
+
+% --------------------------------------------------------
+% Frame con revelado progresivo en dos etapas
+% --------------------------------------------------------
+\begin{frame}{Introducción gradual de un concepto}
+
+\begin{itemize}
+	\item<1-> \textbf{Idea base:} Una red neuronal aprende una función \(f(\mathbf{x})\) a partir de datos.
+	\item<2-> \textbf{Detalle:} El aprendizaje ajusta parámetros (\(\mathbf{w}, b\)) minimizando una pérdida \(L\).
+\end{itemize}
+
+\vspace{0.3cm}
+
+% Elemento visual opcional que aparece en la etapa 2
+\only<2->{
+\begin{block}{Mensaje clave}
+El público debe entender primero la idea general y después el detalle técnico.
+\end{block}
+}
+
+\end{frame}
+
+\end{document}
+
+------------------------------------------------------------
+COMENTARIOS CLAVE DEL EJERCICIO
+------------------------------------------------------------
+
+1. Los overlays se controlan con especificadores como:
+       \item<1-> ...   (aparece desde la etapa 1 en adelante)
+       \item<2-> ...   (aparece desde la etapa 2 en adelante)
+
+2. \only<2->{...} muestra un bloque únicamente en la etapa 2.
+   Esto permite construir la diapositiva por capas sin duplicar frames.
+
+3. Esta técnica es preferible a múltiples \pause cuando se busca control fino,
+   especialmente en listas.
+
+------------------------------------------------------------
+PASOS PARA EJECUTAR EL EJERCICIO (PROCESO NUMERADO)
+------------------------------------------------------------
+
+1. Crea un archivo llamado:
+       main.tex
+
+2. Copia y pega el contenido completo mostrado arriba dentro de main.tex.
+
+3. Compila la presentación:
+       - En TeXStudio: compila con PDFLaTeX (F5)
+       - En Overleaf: selecciona pdfLaTeX y compila
+       - En terminal (opcional):
+            pdflatex main.tex
+            pdflatex main.tex
+
+4. Verifica el resultado en el PDF:
+       - Al avanzar (siguiente slide/step), debe aparecer primero la idea base.
+       - En el siguiente paso, aparece el detalle y el bloque “Mensaje clave”.
+
+5. (Opcional) Ajusta a más etapas:
+       - Cambia <2-> por <3->, <4->, etc.
+       - Agrega más \only<k->{...} si deseas revelar elementos adicionales.
+
+------------------------------------------------------------
+RESULTADO ESPERADO
+------------------------------------------------------------
+
+- Un frame con dos etapas claras:
+    * Etapa 1: idea base
+    * Etapa 2: detalle + bloque de refuerzo
+- Presentación legible y con narrativa progresiva.
+
+FIN DE LA SOLUCIÓN DEL EJERCICIO 05 – UNIDAD 8
