@@ -1,0 +1,137 @@
+===========================
+UNIDAD 7 – EJERCICIO 05
+Normalización de figuras
+===========================
+
+Este ejercicio muestra cómo estandarizar la presentación de figuras en un documento LaTeX
+aplicando un ancho homogéneo, centrado correcto, pie informativo y referencia cruzada
+con \label y \ref.
+
+------------------------------------------------------------
+Archivos requeridos
+------------------------------------------------------------
+
+1) main.tex
+2) Un archivo de imagen para la figura, por ejemplo:
+      fig/figura_demo.pdf
+   (puede ser PDF/PNG/JPG; se recomienda PDF si es vectorial)
+
+------------------------------------------------------------
+Archivo: main.tex
+------------------------------------------------------------
+
+\documentclass[12pt]{book}
+
+\usepackage[spanish]{babel}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+
+\usepackage{graphicx}
+\usepackage{lipsum} % Texto de prueba (opcional)
+
+\begin{document}
+
+\tableofcontents
+
+\chapter{Presentación de resultados}
+
+En esta sección se presenta una figura normalizada. La Figura~\ref{fig:normalizada}
+mantiene un ancho homogéneo, está centrada correctamente y utiliza un pie informativo
+que describe de forma clara lo que el lector debe interpretar.
+
+% --------------------------------------------------------
+% Figura normalizada (ancho homogéneo + centrado + pie + ref)
+% --------------------------------------------------------
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{fig/figura_demo.pdf}
+	\caption{Ejemplo de figura normalizada con ancho homogéneo (\texttt{0.8\textwidth}),
+	centrado consistente y un pie informativo. Este tipo de formato facilita la comparación
+	visual entre figuras dentro del documento y mejora la coherencia editorial.}
+	\label{fig:normalizada}
+\end{figure}
+
+\lipsum[1-3]
+
+\chapter{Discusión}
+
+Si el documento contiene múltiples figuras comparables, conviene mantener el mismo ancho
+(por ejemplo, \texttt{0.8\textwidth}) para que el lector perciba consistencia visual
+en toda la obra.
+
+\lipsum[4-5]
+
+\end{document}
+
+------------------------------------------------------------
+COMENTARIOS CLAVE DEL EJERCICIO
+------------------------------------------------------------
+
+1. El ancho homogéneo se fija con:
+       \includegraphics[width=0.8\textwidth]{...}
+   Esto permite que figuras de la misma categoría mantengan proporciones consistentes.
+
+2. El centrado correcto se logra con:
+       \centering
+   dentro del entorno figure.
+
+3. El pie de figura debe ser informativo:
+   - No repetir el texto del cuerpo.
+   - Explicar qué muestra la figura y por qué es relevante.
+   - Si aplica, incluir condiciones, unidades, fuente o contexto.
+
+4. La referencia cruzada se implementa así:
+       \label{fig:normalizada}
+   y se cita en el texto con:
+       Figura~\ref{fig:normalizada}
+
+   IMPORTANTE: \label debe ir después de \caption para asegurar numeración correcta.
+
+5. El parámetro de colocación [htbp] sugiere a LaTeX posiciones razonables
+   (here, top, bottom, page). LaTeX decide el mejor lugar para no romper el layout.
+
+------------------------------------------------------------
+PASOS PARA EJECUTAR EL EJERCICIO (PROCESO NUMERADO)
+------------------------------------------------------------
+
+1. Crea una carpeta para figuras (si no existe):
+       fig/
+
+2. Coloca una imagen de prueba dentro de fig/ (recomendado PDF vectorial), por ejemplo:
+       fig/figura_demo.pdf
+
+   Si tu imagen tiene otro nombre o formato, actualiza la ruta en \includegraphics.
+
+3. Crea un archivo llamado:
+       main.tex
+
+4. Copia y pega el contenido completo mostrado arriba dentro de main.tex.
+
+5. Compila el documento (flujo normal con PDFLaTeX):
+       - En TeXStudio: presiona F5 (o Compilar)
+       - En terminal (opcional):
+            pdflatex main.tex
+            pdflatex main.tex
+
+6. Verifica el resultado en el PDF:
+       - La figura debe ocupar el mismo ancho (0.8\textwidth).
+       - Debe estar centrada.
+       - Debe aparecer un pie de figura claro y completo.
+       - En el texto debe aparecer la referencia: Figura X (con número correcto).
+
+7. (Opcional) Para normalizar varias figuras:
+       - Repite el mismo patrón en todas:
+            \includegraphics[width=0.8\textwidth]{...}
+            \caption{...}
+            \label{fig:...}
+       - Usa etiquetas consistentes (fig:algo) para facilitar mantenimiento.
+
+------------------------------------------------------------
+RESULTADO ESPERADO
+------------------------------------------------------------
+
+- Figura con ancho homogéneo (0.8\textwidth) y centrado consistente.
+- Pie de figura descriptivo e informativo.
+- Referencia cruzada funcional desde el texto con \ref.
+- Estilo uniforme, listo para documentos académicos o editoriales.
+
+FIN DE LA SOLUCIÓN DEL EJERCICIO 05 – UNIDAD 7
