@@ -1,0 +1,177 @@
+===========================
+UNIDAD 8 – EJERCICIO 02
+Personalización de tema y colores (Beamer)
+===========================
+
+Este ejercicio muestra cómo aplicar un tema Beamer y personalizar una paleta de 2–3 colores
+principales, modificando colores de elementos típicos como títulos, estructura y bloques.
+Se usa el tema metropolis como base moderna.
+
+------------------------------------------------------------
+Archivo: main.tex
+------------------------------------------------------------
+
+\documentclass[aspectratio=169]{beamer}
+
+% --------------------------------------------------------
+% Idioma y codificación (PDFLaTeX)
+% --------------------------------------------------------
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+
+% --------------------------------------------------------
+% Tema (base moderna)
+% NOTA: Si tu instalación no tiene metropolis, compila con un tema estándar
+% (Madrid, CambridgeUS, etc.) o instala metropolis.
+% --------------------------------------------------------
+\usetheme{metropolis}
+
+% --------------------------------------------------------
+% Paleta de 2–3 colores principales (definición propia)
+% --------------------------------------------------------
+\usepackage{xcolor}
+
+% Colores principales (ajusta si tu institución tiene códigos oficiales)
+\definecolor{MainColor}{RGB}{0,102,153}   % Azul institucional (principal)
+\definecolor{AccentColor}{RGB}{0,153,102} % Verde/acento (secundario)
+\definecolor{SoftGray}{RGB}{245,245,245}  % Fondo suave (neutral)
+
+% --------------------------------------------------------
+% Aplicación de colores a elementos Beamer
+% --------------------------------------------------------
+% Estructura (afecta bullets, secciones, títulos en varios temas)
+\setbeamercolor{structure}{fg=MainColor}
+
+% Títulos
+\setbeamercolor{title}{fg=MainColor}
+\setbeamercolor{frametitle}{fg=MainColor,bg=SoftGray}
+
+% Bloques (block, alertblock, exampleblock)
+\setbeamercolor{block title}{fg=white,bg=MainColor}
+\setbeamercolor{block body}{fg=black,bg=SoftGray}
+
+\setbeamercolor{block title alerted}{fg=white,bg=AccentColor}
+\setbeamercolor{block body alerted}{fg=black,bg=SoftGray}
+
+\setbeamercolor{block title example}{fg=white,bg=black!70}
+\setbeamercolor{block body example}{fg=black,bg=SoftGray}
+
+% --------------------------------------------------------
+% Información de portada
+% --------------------------------------------------------
+\title{Tema y colores en Beamer}
+\subtitle{Paleta institucional de 2--3 colores}
+\author{Nombre del autor}
+\institute{Nombre de la institución}
+\date{\today}
+
+\begin{document}
+
+% --------------------------------------------------------
+% Portada
+% --------------------------------------------------------
+\begin{frame}
+	\titlepage
+\end{frame}
+
+% --------------------------------------------------------
+% Diapositiva 1 — Paleta
+% --------------------------------------------------------
+\begin{frame}{Paleta de colores}
+\begin{itemize}
+	\item Color principal: \textbf{MainColor} (estructura y títulos).
+	\item Color de acento: \textbf{AccentColor} (alertas o énfasis).
+	\item Neutral: \textbf{SoftGray} (fondos suaves y consistentes).
+\end{itemize}
+
+\begin{block}{Bloque normal}
+Este bloque usa el color principal en el encabezado y un fondo neutral.
+\end{block}
+
+\begin{alertblock}{Bloque de alerta}
+Este bloque usa el color de acento para resaltar información clave.
+\end{alertblock}
+\end{frame}
+
+% --------------------------------------------------------
+% Diapositiva 2 — Contraste y legibilidad
+% --------------------------------------------------------
+\begin{frame}{Contraste y legibilidad}
+\begin{itemize}
+	\item Mantén buen contraste entre texto y fondo.
+	\item Evita fondos oscuros con texto pequeño.
+	\item Limita la paleta a 2--3 colores para mantener coherencia.
+\end{itemize}
+
+\begin{exampleblock}{Ejemplo}
+Una paleta corta y consistente hace que la presentación se vea profesional.
+\end{exampleblock}
+\end{frame}
+
+\end{document}
+
+------------------------------------------------------------
+COMENTARIOS CLAVE DEL EJERCICIO
+------------------------------------------------------------
+
+1. Se aplica un tema con:
+       \usetheme{metropolis}
+
+2. Se define una paleta corta (2–3 colores) con xcolor:
+       \definecolor{MainColor}{RGB}{...}
+       \definecolor{AccentColor}{RGB}{...}
+       \definecolor{SoftGray}{RGB}{...}
+
+3. Se aplican colores a elementos clave con setbeamercolor:
+   - structure afecta bullets y navegación:
+       \setbeamercolor{structure}{fg=MainColor}
+   - title y frametitle controlan títulos:
+       \setbeamercolor{title}{...}
+       \setbeamercolor{frametitle}{...}
+   - block title/body controlan bloques:
+       \setbeamercolor{block title}{...}
+       \setbeamercolor{block body}{...}
+
+4. Si no tienes metropolis instalado:
+   - Cambia a un tema estándar, por ejemplo:
+         \usetheme{Madrid}
+     y mantén la misma configuración de colores.
+
+------------------------------------------------------------
+PASOS PARA EJECUTAR EL EJERCICIO (PROCESO NUMERADO)
+------------------------------------------------------------
+
+1. Crea un archivo llamado:
+       main.tex
+
+2. Copia y pega el contenido completo mostrado arriba dentro de main.tex.
+
+3. Compila la presentación:
+       - En TeXStudio: compila con PDFLaTeX (F5)
+       - En Overleaf: selecciona pdfLaTeX y compila
+       - En terminal (opcional):
+            pdflatex main.tex
+            pdflatex main.tex
+
+4. Verifica el resultado en el PDF:
+       - Títulos y estructura deben usar el color principal (MainColor).
+       - Los bloques deben mostrar encabezados coloreados y cuerpos con fondo neutral.
+       - Debe existir contraste y buena legibilidad en proyector/pantalla.
+
+5. Si aparece error de tema (metropolis no encontrado):
+       - Sustituye:
+            \usetheme{metropolis}
+         por:
+            \usetheme{Madrid}
+       - Recompila y confirma que la paleta sigue aplicándose.
+
+------------------------------------------------------------
+RESULTADO ESPERADO
+------------------------------------------------------------
+
+- Presentación con un tema aplicado (metropolis o equivalente).
+- Paleta reducida a 2–3 colores principales.
+- Títulos, estructura y bloques con colores personalizados.
+- Diseño coherente, legible y consistente.
+
+FIN DE LA SOLUCIÓN DEL EJERCICIO 02 – UNIDAD 8
