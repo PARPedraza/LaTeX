@@ -1,0 +1,162 @@
+===========================
+UNIDAD 10 – EJERCICIO 04
+Estructuración de un documento largo
+===========================
+
+Este ejercicio muestra cómo reorganizar un proyecto LaTeX extenso usando:
+- carpeta tex/ para capítulos,
+- un capítulo por archivo,
+- inclusión desde un archivo principal con \include,
+- compilación selectiva con \includeonly.
+
+------------------------------------------------------------
+Estructura final recomendada del proyecto
+------------------------------------------------------------
+
+Proyecto_Largo/
+  main.tex
+  tex/
+    cap1.tex
+    cap2.tex
+    cap3.tex
+  fig/
+    (imágenes opcionales)
+  bib/
+    referencias.bib (opcional)
+
+------------------------------------------------------------
+Archivo: main.tex
+------------------------------------------------------------
+
+\documentclass[12pt]{book}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+% (Opcional) Compilación selectiva:
+% Descomenta SOLO cuando quieras compilar capítulos específicos.
+% \includeonly{tex/cap2,tex/cap3}
+
+\begin{document}
+
+\frontmatter
+\tableofcontents
+
+\mainmatter
+
+% Capítulos modulares
+\include{tex/cap1}
+\include{tex/cap2}
+\include{tex/cap3}
+
+\backmatter
+\chapter*{Conclusiones generales}
+Este cierre puede mantenerse en main.tex o en un archivo separado.
+
+\end{document}
+
+------------------------------------------------------------
+Archivo: tex/cap1.tex
+------------------------------------------------------------
+
+\chapter{Introducción}
+
+Este es el Capítulo 1. Aquí se presenta el contexto del documento largo,
+su motivación y objetivos generales.
+
+\section{Motivación}
+Una estructura modular facilita el mantenimiento del proyecto y reduce errores.
+
+\section{Objetivos}
+\begin{itemize}
+  \item Separar capítulos por archivo.
+  \item Compilar de forma parcial cuando sea necesario.
+\end{itemize}
+
+------------------------------------------------------------
+Archivo: tex/cap2.tex
+------------------------------------------------------------
+
+\chapter{Marco teórico}
+
+Este es el Capítulo 2. Aquí se integran definiciones, conceptos y referencias.
+
+\section{Conceptos clave}
+Incluye secciones y subsecciones como en cualquier proyecto normal.
+
+\section{Ejemplo de referencia cruzada}
+El Capítulo~\ref{chap:metodos} presenta la metodología (ver Capítulo 3).
+
+------------------------------------------------------------
+Archivo: tex/cap3.tex
+------------------------------------------------------------
+
+\chapter{Metodología}
+\label{chap:metodos}
+
+Este es el Capítulo 3. Aquí se describe el método, experimentos o desarrollo.
+
+\section{Estructura de trabajo}
+Se recomienda mantener cada capítulo en un archivo independiente.
+
+------------------------------------------------------------
+COMENTARIOS IMPORTANTES
+------------------------------------------------------------
+
+1. \include crea un salto de página y maneja archivos auxiliares por capítulo,
+   lo que acelera compilaciones en proyectos grandes.
+
+2. \includeonly permite compilar solo capítulos seleccionados:
+      \includeonly{tex/cap2,tex/cap3}
+   Esto es ideal cuando el documento completo tarda mucho en compilar.
+
+3. Usa \input cuando quieras incluir fragmentos pequeños sin salto de página.
+
+------------------------------------------------------------
+PROCESO PARA EJECUTAR EL EJERCICIO (PASOS NUMERADOS)
+------------------------------------------------------------
+
+1. Crea una carpeta de proyecto, por ejemplo:
+      Proyecto_Largo/
+
+2. Dentro, crea las carpetas:
+      tex/
+      fig/     (opcional)
+      bib/     (opcional)
+
+3. Crea los archivos:
+      main.tex
+      tex/cap1.tex
+      tex/cap2.tex
+      tex/cap3.tex
+
+4. Copia y pega el contenido correspondiente en cada archivo.
+
+5. Compila el documento completo (sin \includeonly):
+      pdflatex main
+      pdflatex main
+   (dos pasadas para TOC y referencias)
+
+6. Prueba compilación selectiva:
+   - Descomenta en main.tex:
+        \includeonly{tex/cap2}
+   - Compila:
+        pdflatex main
+        pdflatex main
+   Verifica que el PDF solo contenga Capítulo 2 (y elementos necesarios).
+
+7. Regresa a compilación completa comentando de nuevo \includeonly.
+
+------------------------------------------------------------
+RESULTADO ESPERADO
+------------------------------------------------------------
+
+- Proyecto modular con carpeta tex/ y un capítulo por archivo.
+- main.tex incluye capítulos con \include.
+- Compilación completa y compilación parcial funcionando con \includeonly.
+
+FIN DE LA SOLUCIÓN DEL EJERCICIO 04 – UNIDAD 10
