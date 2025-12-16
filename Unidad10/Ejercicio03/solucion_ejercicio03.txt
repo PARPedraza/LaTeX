@@ -1,0 +1,152 @@
+===========================
+UNIDAD 10 – EJERCICIO 03
+Tabla longtable en múltiples páginas
+===========================
+
+Este ejercicio muestra cómo crear una tabla larga con:
+- al menos 20 filas de datos,
+- división automática en múltiples páginas,
+- encabezado repetido en cada página,
+- reglas horizontales con booktabs,
+- combinación de celdas usando multirow y/o multicolumn.
+
+------------------------------------------------------------
+Archivo: main.tex
+------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Tablas avanzadas
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+
+\begin{document}
+
+\section*{Unidad 10 -- Ejercicio 03: Tabla longtable multipágina}
+
+\small % útil para tablas largas (opcional)
+
+\setlength{\LTpre}{6pt}
+\setlength{\LTpost}{6pt}
+
+\begin{longtable}{p{2.2cm} p{5.2cm} p{2.2cm} p{3.2cm}}
+\caption{Ejemplo de tabla multipágina con encabezado repetido.}
+\label{tab:longtable_demo}\\
+
+\toprule
+\textbf{Grupo} & \textbf{Elemento / Descripción} & \textbf{Año} & \textbf{Notas} \\
+\midrule
+\endfirsthead
+
+\toprule
+\textbf{Grupo} & \textbf{Elemento / Descripción} & \textbf{Año} & \textbf{Notas} \\
+\midrule
+\endhead
+
+\midrule
+\multicolumn{4}{r}{\emph{Continúa en la siguiente página}} \\
+\bottomrule
+\endfoot
+
+\bottomrule
+\endlastfoot
+
+% -------------------- FILAS (>=20) --------------------
+
+\multirow{6}{*}{A} & Entrada 01: Registro y limpieza de datos & 2018 & Caso base \\
+                  & Entrada 02: Normalización de variables & 2019 & Recomendado \\
+                  & Entrada 03: Validación cruzada & 2020 & Estándar \\
+                  & Entrada 04: Reporte de métricas & 2021 & Obligatorio \\
+                  & Entrada 05: Análisis de errores & 2022 & Diagnóstico \\
+                  & Entrada 06: Documentación del flujo & 2023 & Auditoría \\
+
+\midrule
+\multirow{6}{*}{B} & Entrada 07: Diseño de tabla profesional & 2018 & booktabs \\
+                  & Entrada 08: Tabla multipágina & 2019 & longtable \\
+                  & Entrada 09: Celdas combinadas & 2020 & multirow \\
+                  & Entrada 10: Encabezados repetidos & 2021 & automático \\
+                  & Entrada 11: Notas y aclaraciones & 2022 & pie de tabla \\
+                  & Entrada 12: Referencia desde el texto & 2023 & \texttt{\textbackslash ref} \\
+
+\midrule
+\multicolumn{4}{l}{\textbf{Sección especial: Resultados extendidos (ejemplo con multicolumn)}} \\
+
+\midrule
+\multirow{8}{*}{C} & Entrada 13: Resultado 1 (medición) & 2017 & preliminar \\
+                  & Entrada 14: Resultado 2 (medición) & 2018 & consistente \\
+                  & Entrada 15: Resultado 3 (medición) & 2019 & revisado \\
+                  & Entrada 16: Resultado 4 (medición) & 2020 & aceptado \\
+                  & Entrada 17: Resultado 5 (medición) & 2021 & comparativo \\
+                  & Entrada 18: Resultado 6 (medición) & 2022 & extendido \\
+                  & Entrada 19: Resultado 7 (medición) & 2023 & validado \\
+                  & Entrada 20: Resultado 8 (medición) & 2024 & final \\
+
+\midrule
+\multirow{4}{*}{D} & Entrada 21: Cierre y conclusiones & 2020 & resumen \\
+                  & Entrada 22: Recomendaciones & 2021 & aplicable \\
+                  & Entrada 23: Limitaciones & 2022 & discusión \\
+                  & Entrada 24: Trabajo futuro & 2023 & continuación \\
+
+\end{longtable}
+
+\normalsize
+
+En la Tabla~\ref{tab:longtable_demo} se muestra un ejemplo de \texttt{longtable}
+con encabezado repetido, reglas tipo \texttt{booktabs} y celdas combinadas
+mediante \texttt{multirow} y \texttt{multicolumn}.
+
+\end{document}
+
+------------------------------------------------------------
+COMENTARIOS IMPORTANTES
+------------------------------------------------------------
+
+1. longtable divide automáticamente la tabla entre páginas y permite repetir
+   encabezados con:
+      \endfirsthead / \endhead / \endfoot / \endlastfoot
+
+2. booktabs mejora el estilo con:
+      \toprule, \midrule, \bottomrule
+
+3. multirow combina filas en una columna:
+      \multirow{6}{*}{A} ...
+
+4. multicolumn combina columnas, útil para títulos internos:
+      \multicolumn{4}{l}{...}
+
+------------------------------------------------------------
+PROCESO PARA EJECUTAR EL EJERCICIO (PASOS NUMERADOS)
+------------------------------------------------------------
+
+1. Crea un archivo:
+      main.tex
+   y pega el contenido anterior.
+
+2. Compila con:
+      pdflatex main
+
+3. Verifica que:
+   - la tabla tenga al menos 20 filas (aquí hay 24),
+   - el encabezado se repita en páginas siguientes,
+   - existan reglas horizontales con booktabs,
+   - haya al menos una combinación de celdas (multirow y multicolumn),
+   - la tabla sea legible y esté bien alineada.
+
+4. Para forzar que se parta en más de una página (si no se parte),
+   agrega más filas o reduce el tamaño de página en el preámbulo,
+   o elimina \small para hacerla más alta.
+
+------------------------------------------------------------
+RESULTADO ESPERADO
+------------------------------------------------------------
+
+- Una tabla longtable con encabezado repetido, estilo profesional y celdas combinadas.
+- División automática entre páginas si la longitud lo requiere.
+
+FIN DE LA SOLUCIÓN DEL EJERCICIO 03 – UNIDAD 10
