@@ -1,0 +1,185 @@
+===========================
+UNIDAD 10 – EJERCICIO 05
+Glosario y acrónimos básicos (glossaries)
+===========================
+
+Este ejercicio muestra cómo:
+- crear un glosario con 5 términos,
+- definir 3 acrónimos,
+- usar términos y acrónimos en dos capítulos distintos,
+- generar automáticamente glosario y lista de acrónimos,
+- mantener enlaces (hyperref) y orden correcto.
+
+------------------------------------------------------------
+Estructura recomendada del proyecto
+------------------------------------------------------------
+
+Proyecto_Glosario/
+  main.tex
+  tex/
+    cap1.tex
+    cap2.tex
+  tex/glosario.tex
+
+------------------------------------------------------------
+Archivo: main.tex
+------------------------------------------------------------
+
+\documentclass[12pt]{book}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{hyperref}
+
+% ---- GLOSSARIES ----
+\usepackage[acronym,toc]{glossaries}
+\makeglossaries
+
+% Definiciones de términos y acrónimos (archivo separado)
+\input{tex/glosario}
+
+\begin{document}
+
+\frontmatter
+\tableofcontents
+
+\mainmatter
+
+\include{tex/cap1}
+\include{tex/cap2}
+
+\backmatter
+
+% Imprimir lista de acrónimos y glosario
+\chapter*{Listas y glosarios}
+\addcontentsline{toc}{chapter}{Listas y glosarios}
+
+\printglossary[type=\acronymtype,title={Lista de acrónimos}]
+\printglossary[title={Glosario}]
+
+\end{document}
+
+------------------------------------------------------------
+Archivo: tex/glosario.tex
+------------------------------------------------------------
+
+% =========================
+% TÉRMINOS (glosario)
+% =========================
+
+\newglossaryentry{latex}{
+  name={\LaTeX{}},
+  description={Sistema de composición tipográfica utilizado para documentos académicos y científicos}
+}
+
+\newglossaryentry{tikz}{
+  name={TikZ},
+  description={Paquete de \LaTeX{} para crear gráficos vectoriales y diagramas}
+}
+
+\newglossaryentry{pgfplots}{
+  name={PGFPlots},
+  description={Paquete basado en TikZ para generar gráficas científicas a partir de datos}
+}
+
+\newglossaryentry{longtable}{
+  name={longtable},
+  description={Entorno para crear tablas que se dividen automáticamente en múltiples páginas}
+}
+
+\newglossaryentry{booktabs}{
+  name={booktabs},
+  description={Paquete para mejorar el estilo de tablas con reglas horizontales profesionales}
+}
+
+% =========================
+% ACRÓNIMOS (3 mínimos)
+% =========================
+
+\newacronym{ia}{IA}{Inteligencia Artificial}
+\newacronym{ml}{ML}{Machine Learning}
+\newacronym{cv}{CV}{Computer Vision}
+
+------------------------------------------------------------
+Archivo: tex/cap1.tex
+------------------------------------------------------------
+
+\chapter{Capítulo 1: Introducción}
+
+En este capítulo se menciona \gls{latex} como herramienta principal del documento.
+También se introduce el concepto de \gls{tikz} para diagramas y \gls{pgfplots}
+para gráficas.
+
+\section{Acrónimos en el Capítulo 1}
+En el área de \gls{ia}, es común referirse a \gls{ml} para modelado de datos.
+
+------------------------------------------------------------
+Archivo: tex/cap2.tex
+------------------------------------------------------------
+
+\chapter{Capítulo 2: Desarrollo}
+
+En este capítulo se usan conceptos de tablas avanzadas como \gls{longtable}
+y \gls{booktabs} para presentar resultados de manera profesional.
+
+\section{Acrónimos en el Capítulo 2}
+En aplicaciones de visión, \gls{cv} es un término frecuente en literatura técnica.
+
+------------------------------------------------------------
+COMENTARIOS IMPORTANTES
+------------------------------------------------------------
+
+1. \gls{clave} imprime el término y crea enlace a la entrada del glosario.
+   La primera vez suele mostrar formato "completo" (según configuración).
+   Para imprimir solo el nombre sin enlace, existe \glsentryname{clave}.
+
+2. Los acrónimos usan \newacronym{clave}{siglas}{significado}.
+   \gls{ia} imprimirá "Inteligencia Artificial (IA)" la primera vez,
+   y "IA" en usos posteriores (comportamiento estándar).
+
+3. Se recomienda cargar hyperref para que existan enlaces clicables.
+
+------------------------------------------------------------
+PROCESO PARA EJECUTAR EL EJERCICIO (PASOS NUMERADOS)
+------------------------------------------------------------
+
+1. Crea la estructura de carpetas:
+      Proyecto_Glosario/
+        main.tex
+        tex/
+          cap1.tex
+          cap2.tex
+          glosario.tex
+
+2. Copia y pega el contenido anterior en cada archivo.
+
+3. Compila siguiendo el flujo correcto para glossaries:
+
+   Opción A (recomendado en consola):
+     1) pdflatex main
+     2) makeglossaries main
+     3) pdflatex main
+     4) pdflatex main
+
+   Opción B (Overleaf):
+     - Compila normalmente; Overleaf suele ejecutar glossaries automáticamente
+       si la configuración lo permite. Si no aparece, revisa el log y habilita
+       el soporte de glossaries.
+
+4. Verifica en el PDF que:
+   - Capítulo 1 y Capítulo 2 usan términos y acrónimos con enlaces,
+   - existe una "Lista de acrónimos" con 3 entradas,
+   - existe un "Glosario" con 5 términos,
+   - los elementos aparecen ordenados y accesibles desde el índice (TOC).
+
+------------------------------------------------------------
+RESULTADO ESPERADO
+------------------------------------------------------------
+
+- Glosario generado automáticamente con al menos 5 términos.
+- Lista de acrónimos generada automáticamente con al menos 3 acrónimos.
+- Uso de términos y acrónimos en dos capítulos distintos con enlaces activos.
+
+FIN DE LA SOLUCIÓN DEL EJERCICIO 05 – UNIDAD 10
