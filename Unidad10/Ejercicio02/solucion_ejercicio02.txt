@@ -1,0 +1,110 @@
+===========================
+UNIDAD 10 – EJERCICIO 02
+Gráfica simple con PGFPlots
+===========================
+
+Este ejercicio muestra cómo crear una gráfica 2D básica con PGFPlots cumpliendo:
+- Ejes etiquetados (X y Y)
+- Al menos 5 pares de datos
+- Línea continua
+- Título descriptivo
+- Ajuste al ancho del documento
+
+------------------------------------------------------------
+Archivo: main.tex
+------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% PGFPlots (basado en TikZ)
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+
+\section*{Unidad 10 -- Ejercicio 02: Gráfica simple con PGFPlots}
+
+\begin{figure}[h]
+\centering
+
+% Ajuste de la gráfica al ancho del documento
+\begin{tikzpicture}
+\begin{axis}[
+  width=0.9\textwidth,
+  height=6cm,
+  title={Relación entre iteración y error},
+  xlabel={Iteración},
+  ylabel={Error},
+  grid=both,
+  enlargelimits=false
+]
+
+% Datos (al menos 5 pares) y línea continua
+\addplot+[mark=none] coordinates {
+  (1,  9.5)
+  (2,  7.2)
+  (3,  5.8)
+  (4,  4.1)
+  (5,  3.0)
+  (6,  2.4)
+  (7,  2.1)
+};
+
+\end{axis}
+\end{tikzpicture}
+
+\caption{Ejemplo de gráfica 2D generada con PGFPlots.}
+\label{fig:pgfplots_simple}
+
+\end{figure}
+
+En la Figura~\ref{fig:pgfplots_simple} se observa una tendencia decreciente del error
+conforme aumenta el número de iteraciones.
+
+\end{document}
+
+------------------------------------------------------------
+COMENTARIOS IMPORTANTES
+------------------------------------------------------------
+
+1. El parámetro width=0.9\textwidth ajusta la gráfica al ancho del documento,
+   manteniendo buena legibilidad.
+
+2. El título y etiquetas se definen con:
+     title=..., xlabel=..., ylabel=...
+
+3. La opción grid=both añade una cuadrícula útil en gráficas científicas.
+
+4. La línea continua se logra con:
+     \addplot+[mark=none] coordinates { ... };
+
+------------------------------------------------------------
+PROCESO PARA EJECUTAR EL EJERCICIO (PASOS NUMERADOS)
+------------------------------------------------------------
+
+1. Crea un archivo llamado:
+      main.tex
+   y pega el código anterior.
+
+2. Compila con:
+      pdflatex main
+   (Overleaf/TeXStudio también funciona directamente)
+
+3. Verifica que la gráfica incluya:
+   - título visible ("Relación entre iteración y error")
+   - eje X etiquetado (Iteración)
+   - eje Y etiquetado (Error)
+   - al menos 5 puntos (aquí hay 7)
+   - línea continua (sin marcadores)
+
+4. (Opcional) Cambia width=0.9\textwidth a 1.0\textwidth si deseas usar todo el ancho.
+
+------------------------------------------------------------
+RESULTADO ESPERADO
+------------------------------------------------------------
+
+- Una gráfica 2D limpia, con ejes etiq
