@@ -1,0 +1,142 @@
+===========================
+UNIDAD 10 – EJERCICIO 06
+Inserción de código con formato
+===========================
+
+Este ejercicio muestra cómo insertar un bloque de código correctamente formateado
+dentro de un documento LaTeX, cumpliendo con:
+- 10–15 líneas de código,
+- resaltado de sintaxis,
+- numeración de líneas,
+- título o pie descriptivo,
+- maquetación limpia y legible.
+
+Se presenta una solución usando el paquete listings (portable y sin requisitos
+adicionales). Al final se indica la alternativa con minted.
+
+------------------------------------------------------------
+Archivo: main.tex
+------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Para código con formato
+\usepackage{listings}
+\usepackage{xcolor}
+
+% Configuración global de listings
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\small,
+  numbers=left,
+  numberstyle=\tiny,
+  stepnumber=1,
+  numbersep=8pt,
+  frame=single,
+  breaklines=true,
+  tabsize=2,
+  showstringspaces=false,
+  captionpos=b,
+  keywordstyle=\color{blue},
+  commentstyle=\color{gray},
+  stringstyle=\color{teal}
+}
+
+\begin{document}
+
+\section*{Unidad 10 -- Ejercicio 06: Inserción de código con formato}
+
+En el Código~\ref{lst:python_demo} se muestra un ejemplo de un script sencillo
+en Python, correctamente formateado e integrado en el documento.
+
+\begin{lstlisting}[
+  caption={Ejemplo de script en Python para cálculo de promedio},
+  label={lst:python_demo}
+]
+def calcular_promedio(valores):
+    if len(valores) == 0:
+        return None
+
+    suma = 0
+    for v in valores:
+        suma += v
+
+    promedio = suma / len(valores)
+    return promedio
+
+
+datos = [8.5, 9.0, 7.8, 8.9, 9.2]
+resultado = calcular_promedio(datos)
+print("Promedio:", resultado)
+\end{lstlisting}
+
+El bloque anterior incluye numeración de líneas, resaltado de sintaxis y
+un pie descriptivo que permite referenciar el código desde el texto.
+
+\end{document}
+
+------------------------------------------------------------
+COMENTARIOS IMPORTANTES
+------------------------------------------------------------
+
+1. El paquete listings no requiere opciones especiales de compilación,
+   por lo que es compatible con pdflatex, Overleaf y editores locales.
+
+2. La opción numbers=left activa la numeración de líneas, útil para
+   discutir fragmentos específicos del código en el texto.
+
+3. breaklines=true evita que líneas largas se salgan del margen,
+   preservando la maquetación del documento.
+
+4. El título del bloque se define con caption=..., y puede referenciarse
+   con \ref{lst:python_demo}.
+
+------------------------------------------------------------
+ALTERNATIVA CON MINTED (OPCIONAL)
+------------------------------------------------------------
+
+Si se desea un resaltado más avanzado, puede usarse minted:
+
+\usepackage{minted}
+
+\begin{minted}[linenos,frame=lines]{python}
+# código aquí
+\end{minted}
+
+Nota: minted requiere compilar con la opción:
+  -shell-escape
+
+------------------------------------------------------------
+PROCESO PARA EJECUTAR EL EJERCICIO (PASOS NUMERADOS)
+------------------------------------------------------------
+
+1. Crea un archivo llamado:
+      main.tex
+
+2. Copia y pega el contenido anterior.
+
+3. Compila con:
+      pdflatex main
+
+4. Verifica que:
+   - el bloque tenga entre 10 y 15 líneas de código,
+   - exista numeración de líneas,
+   - el código esté enmarcado y bien alineado,
+   - el título/pie descriptivo sea visible,
+   - la maquetación no se vea afectada.
+
+5. (Opcional) Prueba la alternativa con minted si tu entorno permite
+   usar -shell-escape.
+
+------------------------------------------------------------
+RESULTADO ESPERADO
+------------------------------------------------------------
+
+- Un bloque de código legible, numerado y correctamente integrado.
+- Estilo profesional adecuado para tesis, artículos o libros técnicos.
+
+FIN DE LA SOLUCIÓN DEL EJERCICIO 06 – UNIDAD 10
