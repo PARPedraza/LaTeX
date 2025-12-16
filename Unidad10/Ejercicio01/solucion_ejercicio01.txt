@@ -1,0 +1,105 @@
+===========================
+UNIDAD 10 – EJERCICIO 01
+Diagrama de flujo simple con TikZ
+===========================
+
+Este ejercicio muestra cómo crear un diagrama de flujo básico en TikZ con:
+- 4 nodos (Inicio, Proceso, Decisión, Fin)
+- flechas de conexión
+- texto alineado y legible
+- ajuste al ancho del documento
+
+------------------------------------------------------------
+Archivo: main.tex
+------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% TikZ
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric}
+
+\begin{document}
+
+\section*{Unidad 10 -- Ejercicio 01: Diagrama de flujo con TikZ}
+
+% Recomendación: envolver el diagrama en un \resizebox para que se ajuste al ancho.
+\begin{center}
+\resizebox{0.9\textwidth}{!}{%
+\begin{tikzpicture}[
+  node distance=18mm,
+  >=Latex,
+  font=\small,
+  block/.style={rectangle, draw, rounded corners, align=center, minimum width=3.4cm, minimum height=9mm},
+  decision/.style={diamond, draw, aspect=2.2, align=center, inner sep=1pt},
+  line/.style={-Latex}
+]
+
+% Nodos
+\node[block] (start) {Inicio};
+\node[block, below=of start] (proc) {Proceso\\(tarea principal)};
+\node[decision, below=of proc] (dec) {¿Condición\\se cumple?};
+\node[block, below=of dec] (end) {Fin};
+
+% Flechas
+\draw[line] (start) -- (proc);
+\draw[line] (proc) -- (dec);
+\draw[line] (dec) -- node[right]{Sí} (end);
+
+% Rama "No" (regresa al proceso)
+\draw[line] (dec.east) -- ++(22mm,0) node[midway,above]{No}
+                  |- (proc.east);
+
+\end{tikzpicture}%
+}
+\end{center}
+
+\end{document}
+
+------------------------------------------------------------
+COMENTARIOS IMPORTANTES
+------------------------------------------------------------
+
+1. \resizebox{0.9\textwidth}{!}{...} asegura que el diagrama se adapte al ancho
+   del documento, incluso si cambias el tamaño de letra o el diseño.
+
+2. Se usan estilos:
+   - block: rectángulos redondeados para Inicio/Proceso/Fin
+   - decision: rombo para la decisión
+   - line: flechas tipo Latex
+
+3. La rama "No" regresa al proceso, típico en diagramas de flujo.
+
+------------------------------------------------------------
+PROCESO PARA EJECUTAR EL EJERCICIO (PASOS NUMERADOS)
+------------------------------------------------------------
+
+1. Crea un proyecto y guarda el contenido anterior como:
+      main.tex
+
+2. Compila con:
+      pdflatex main
+   (o simplemente compila desde Overleaf/TeXStudio)
+
+3. Verifica que el diagrama:
+   - tenga 4 nodos (Inicio, Proceso, Decisión, Fin)
+   - tenga flechas en secuencia
+   - muestre dos salidas en la decisión (Sí y No)
+   - esté centrado y ajustado al ancho (0.9\textwidth)
+
+4. (Opcional) Cambia 0.9 por 1.0 si deseas ocupar todo el ancho:
+      \resizebox{1.0\textwidth}{!}{...}
+
+------------------------------------------------------------
+RESULTADO ESPERADO
+------------------------------------------------------------
+
+- Un diagrama de flujo limpio y legible con 4 nodos.
+- Conectores y etiquetas Sí/No.
+- Ajuste automático al ancho del documento.
+
+FIN DE LA SOLUCIÓN DEL EJERCICIO 01 – UNIDAD 10
