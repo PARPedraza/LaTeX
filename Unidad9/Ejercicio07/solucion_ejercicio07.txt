@@ -1,0 +1,183 @@
+===========================
+UNIDAD 9 – EJERCICIO 07
+Revisión final del proyecto LaTeX
+===========================
+
+Este ejercicio muestra cómo realizar una revisión final de un proyecto
+LaTeX antes de considerarlo terminado o listo para entrega.
+
+------------------------------------------------------------
+OBJETIVO DEL EJERCICIO
+------------------------------------------------------------
+
+Revisar de forma integral el flujo de trabajo aplicado durante el
+desarrollo de un proyecto LaTeX y documentar buenas prácticas,
+errores detectados y acciones de mejora.
+
+------------------------------------------------------------
+PROYECTO DE REFERENCIA
+------------------------------------------------------------
+
+Se puede usar un proyecto LaTeX sencillo trabajado durante la unidad,
+por ejemplo:
+
+Proyecto_LaTeX/
+
+  main.tex
+  secciones/
+      introduccion.tex
+      metodologia.tex
+      resultados.tex
+  fig/
+      figura1.png
+  bib/
+      referencias.bib
+  README.md
+  .gitignore
+
+------------------------------------------------------------
+1. PRÁCTICAS APLICADAS CORRECTAMENTE
+------------------------------------------------------------
+
+Durante el desarrollo del proyecto se aplicaron las siguientes prácticas:
+
+[ X ] El proyecto se organizó en carpetas.
+
+[ X ] Se usó un archivo principal main.tex.
+
+[ X ] Las secciones se separaron en archivos independientes.
+
+[ X ] Las imágenes se guardaron en una carpeta fig/.
+
+[ X ] Las referencias se organizaron en un archivo .bib.
+
+[ X ] Se utilizó GitHub para respaldar el proyecto.
+
+[ X ] Se realizaron commits con mensajes descriptivos.
+
+[ X ] Se evitó subir archivos auxiliares de LaTeX.
+
+[ X ] El documento se compiló antes de cerrar la versión final.
+
+------------------------------------------------------------
+2. ERRORES IDENTIFICADOS
+------------------------------------------------------------
+
+Durante la revisión se pueden identificar errores como:
+
+- Archivos auxiliares subidos por error al repositorio.
+- Imágenes faltantes o mal ubicadas.
+- Referencias bibliográficas incompletas.
+- Mensajes de commit poco claros.
+- Falta de README con instrucciones.
+- Warnings de compilación no revisados.
+- Nombres de archivos con espacios o acentos.
+- Falta de una versión final etiquetada.
+
+Ejemplo de error:
+
+Se detectó que una imagen usada en main.tex no estaba dentro
+de la carpeta fig/, por lo que el proyecto no compilaba correctamente
+en otro equipo.
+
+------------------------------------------------------------
+3. ACCIONES DE MEJORA
+------------------------------------------------------------
+
+Para mejorar futuras colaboraciones se recomienda:
+
+1. Crear una estructura estándar para todos los proyectos LaTeX.
+
+2. Agregar siempre un archivo README.md con:
+
+   - objetivo del proyecto,
+   - instrucciones de compilación,
+   - autores,
+   - versión del documento.
+
+3. Usar un archivo .gitignore para excluir archivos temporales.
+
+4. Escribir commits claros, por ejemplo:
+
+      git commit -m "Agrega sección de metodología"
+
+5. Revisar el proyecto antes de compartirlo:
+
+   [ ] Compila sin errores
+   [ ] Figuras visibles
+   [ ] Referencias completas
+   [ ] Sin archivos innecesarios
+   [ ] Historial organizado
+
+6. Crear etiquetas para versiones importantes:
+
+      git tag v1.0_final
+
+7. Sincronizar correctamente Overleaf y GitHub.
+
+------------------------------------------------------------
+4. CHECKLIST DE CIERRE DEL PROYECTO
+------------------------------------------------------------
+
+Antes de cerrar el proyecto se debe verificar:
+
+[ ] El documento compila correctamente.
+
+[ ] No hay errores críticos.
+
+[ ] Las figuras aparecen en el PDF.
+
+[ ] Las tablas están completas.
+
+[ ] Las referencias bibliográficas funcionan.
+
+[ ] El repositorio está actualizado.
+
+[ ] Existe un commit final.
+
+[ ] Existe una etiqueta de versión final.
+
+[ ] El README está actualizado.
+
+[ ] El proyecto puede abrirse en otro equipo.
+
+------------------------------------------------------------
+5. EJEMPLO DE CIERRE FORMAL
+------------------------------------------------------------
+
+Versión final:
+
+v1.0_final
+
+Commit final sugerido:
+
+git add .
+git commit -m "Cierre final del proyecto LaTeX"
+git tag v1.0_final
+git push origin main
+git push origin v1.0_final
+
+------------------------------------------------------------
+6. CONCLUSIÓN DE LA REVISIÓN
+------------------------------------------------------------
+
+El proyecto se considera cerrado cuando compila correctamente,
+cuenta con todos sus archivos necesarios, conserva un historial
+claro de cambios y puede reproducirse en otro equipo o entorno.
+
+La revisión final permite entregar un proyecto LaTeX ordenado,
+documentado, reproducible y preparado para futuras colaboraciones.
+
+------------------------------------------------------------
+RESULTADO ESPERADO
+------------------------------------------------------------
+
+Al finalizar este ejercicio se obtiene:
+
+- Una revisión documentada del proyecto.
+- Una lista de prácticas correctas.
+- Una lista de errores detectados.
+- Acciones de mejora para futuros trabajos.
+- Un cierre formal mediante commit y etiqueta de versión.
+
+FIN DE LA SOLUCIÓN DEL EJERCICIO 07 – UNIDAD 9
