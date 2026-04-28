@@ -1,0 +1,228 @@
+===========================
+UNIDAD 9 – EJERCICIO 05
+Definición de flujo de trabajo en LaTeX
+===========================
+
+Este ejercicio muestra cómo diseñar un flujo de trabajo para
+desarrollar colaborativamente un proyecto LaTeX usando Overleaf
+y GitHub.
+
+------------------------------------------------------------
+OBJETIVO DEL EJERCICIO
+------------------------------------------------------------
+
+Definir un flujo básico de edición, revisión y control de versiones
+para un documento LaTeX.
+
+------------------------------------------------------------
+PROYECTO DE EJEMPLO
+------------------------------------------------------------
+
+Supongamos un artículo con estructura:
+
+Proyecto_LaTeX/
+
+ main.tex
+ secciones/
+   intro.tex
+   metodologia.tex
+   resultados.tex
+
+ fig/
+ bib/
+
+------------------------------------------------------------
+1. DEFINIR ROLES DE TRABAJO
+------------------------------------------------------------
+
+Participante A
+--------------
+
+Responsable de:
+
+- editar introducción
+- mantener bibliografía
+- integrar versión principal
+
+------------------------------------------------------------
+
+Participante B
+--------------
+
+Responsable de:
+
+- desarrollar metodología
+- generar figuras
+- revisar resultados
+
+------------------------------------------------------------
+
+Participante C (revisor)
+------------------------
+
+Responsable de:
+
+- revisar errores
+- validar formato
+- aprobar versión final
+
+------------------------------------------------------------
+2. MOMENTOS DE EDICIÓN
+------------------------------------------------------------
+
+Flujo propuesto:
+
+Paso 1
+
+Cada participante edita su archivo:
+
+intro.tex
+metodologia.tex
+resultados.tex
+
+------------------------------------------------------------
+
+Paso 2
+
+Se integran cambios en main.tex
+
+Compilar para verificar:
+
+- referencias
+- figuras
+- estructura
+
+------------------------------------------------------------
+
+Paso 3
+
+Guardar una versión preliminar:
+
+v0.1
+
+Commit ejemplo:
+
+git commit -m "Primer borrador completo"
+
+------------------------------------------------------------
+3. MOMENTOS DE REVISIÓN
+------------------------------------------------------------
+
+Después de cambios mayores:
+
+Revisar:
+
+[ ] Compila sin errores
+
+[ ] Referencias correctas
+
+[ ] Figuras aparecen
+
+[ ] Sin warnings graves
+
+------------------------------------------------------------
+
+Generar nueva versión:
+
+v0.2 revisión interna
+
+Commit:
+
+git commit -m "Correcciones de revisión"
+
+------------------------------------------------------------
+4. HERRAMIENTAS UTILIZADAS
+------------------------------------------------------------
+
+Overleaf
+--------
+
+Para:
+
+- escritura colaborativa
+- comentarios
+- compilación
+
+------------------------------------------------------------
+
+GitHub
+------
+
+Para:
+
+- respaldo
+- commits
+- historial
+- versiones etiquetadas
+
+Ejemplo:
+
+git tag v1.0
+
+------------------------------------------------------------
+5. CRITERIOS PARA CERRAR VERSIONES
+------------------------------------------------------------
+
+Una versión se cierra cuando:
+
+[ ] Documento compila
+
+[ ] Sin errores
+
+[ ] Revisiones completadas
+
+[ ] Commit registrado
+
+[ ] Versión etiquetada
+
+Ejemplo:
+
+v1.0_final
+
+------------------------------------------------------------
+FLUJO PROPUESTO
+------------------------------------------------------------
+
+Edición individual
+      ↓
+Integración
+      ↓
+Compilación
+      ↓
+Revisión
+      ↓
+Commit
+      ↓
+Nueva versión
+
+------------------------------------------------------------
+EJEMPLO DE HISTORIAL
+------------------------------------------------------------
+
+Commit 1
+Versión inicial del documento
+
+Commit 2
+Agregada metodología
+
+Commit 3
+Corrección de referencias
+
+Commit 4
+Versión final para entrega
+
+------------------------------------------------------------
+RESULTADO ESPERADO
+------------------------------------------------------------
+
+Diseñar un flujo simple donde:
+
+- se asignan tareas,
+- se establecen momentos de revisión,
+- se usan Overleaf y GitHub,
+- se controlan versiones del proyecto.
+
+Esto constituye un flujo de trabajo reproducible
+para proyectos LaTeX colaborativos.
+
+FIN DE LA SOLUCIÓN DEL EJERCICIO 05 – UNIDAD 9
