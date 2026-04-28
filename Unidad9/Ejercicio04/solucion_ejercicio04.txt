@@ -1,0 +1,162 @@
+===========================
+UNIDAD 9 – EJERCICIO 04
+Proyecto sincronizado con GitHub
+===========================
+
+Este ejercicio muestra cómo sincronizar un proyecto LaTeX entre Overleaf
+y GitHub para mantener control de versiones y respaldo automático.
+
+------------------------------------------------------------
+OBJETIVO DEL EJERCICIO
+------------------------------------------------------------
+
+Configurar un proyecto de Overleaf enlazado con GitHub y verificar
+que los cambios realizados generan commits en el repositorio remoto.
+
+------------------------------------------------------------
+REQUISITOS PREVIOS
+------------------------------------------------------------
+
+- Cuenta en GitHub.
+- Proyecto creado en Overleaf.
+- Repositorio vacío en GitHub.
+- Permisos para autorizar la conexión Overleaf-GitHub.
+
+------------------------------------------------------------
+PROCESO PARA EJECUTAR EL EJERCICIO (PASOS NUMERADOS)
+------------------------------------------------------------
+
+1. Inicia sesión en GitHub.
+
+2. Crea un nuevo repositorio vacío, por ejemplo:
+
+      proyecto-overleaf-github
+
+   Puedes dejarlo sin README para comenzar vacío.
+
+3. Copia la URL del repositorio, por ejemplo:
+
+      https://github.com/USUARIO/proyecto-overleaf-github.git
+
+4. Abre tu proyecto en Overleaf.
+
+5. Ve al menú del proyecto y localiza la opción:
+
+      Git / GitHub Sync
+
+6. Autoriza a Overleaf para acceder a tu cuenta GitHub
+   (solo la primera vez).
+
+7. Vincula el proyecto con el repositorio creado.
+
+8. Realiza la primera sincronización y verifica que los archivos
+   del proyecto aparecen en GitHub:
+
+      main.tex
+      figuras/
+      bibliografia.bib
+      etc.
+
+------------------------------------------------------------
+REALIZAR UN CAMBIO DE PRUEBA
+------------------------------------------------------------
+
+9. En Overleaf modifica el archivo principal, por ejemplo:
+
+   Agregar una nueva sección:
+
+      \section{Prueba de sincronización}
+
+      Este cambio debe aparecer en GitHub como un nuevo commit.
+
+10. Guarda cambios en Overleaf.
+
+11. Ejecuta la sincronización hacia GitHub.
+
+12. Abre GitHub y verifica que apareció un nuevo commit.
+
+------------------------------------------------------------
+VERIFICAR HISTORIAL DE COMMITS
+------------------------------------------------------------
+
+13. Revisa la pestaña:
+
+      Commits
+
+14. Observa que se conserva información como:
+
+   - Hash del commit
+   - Autor
+   - Fecha y hora
+   - Mensaje del commit
+   - Archivos modificados
+   - Diferencias (diff)
+   - Historial completo de versiones
+
+------------------------------------------------------------
+EJEMPLO DE HISTORIAL ESPERADO
+------------------------------------------------------------
+
+Commit 1:
+   Initial synchronization from Overleaf
+
+Commit 2:
+   Added synchronization test section
+
+Commit 3:
+   Updated bibliography references
+
+------------------------------------------------------------
+PRUEBA OPCIONAL DE VERSIONAMIENTO
+------------------------------------------------------------
+
+15. Haz otro cambio en Overleaf, por ejemplo:
+
+   Cambiar:
+
+      Introducción
+
+   por
+
+      Introducción revisada
+
+16. Sincroniza nuevamente.
+
+17. Comprueba que GitHub registra un commit adicional.
+
+Esto demuestra seguimiento de versiones del proyecto.
+
+------------------------------------------------------------
+RESULTADO ESPERADO
+------------------------------------------------------------
+
+- Proyecto LaTeX sincronizado entre Overleaf y GitHub.
+- Cambios en Overleaf reflejados como commits en GitHub.
+- Historial de versiones visible.
+- Respaldo automático del proyecto.
+- Base preparada para trabajo colaborativo.
+
+------------------------------------------------------------
+¿QUÉ INFORMACIÓN CONSERVA EL HISTORIAL?
+------------------------------------------------------------
+
+GitHub conserva:
+
+- Quién hizo el cambio.
+- Cuándo se hizo.
+- Qué archivos cambiaron.
+- Qué líneas fueron agregadas o eliminadas.
+- Versiones anteriores recuperables.
+- Trazabilidad completa del proyecto.
+
+------------------------------------------------------------
+VENTAJAS DE ESTA SINCRONIZACIÓN
+------------------------------------------------------------
+
+- Respaldo del proyecto
+- Control de versiones
+- Trabajo colaborativo
+- Recuperación de versiones anteriores
+- Integración con flujos Git profesionales
+
+FIN DE LA SOLUCIÓN DEL EJERCICIO 04 – UNIDAD 9
