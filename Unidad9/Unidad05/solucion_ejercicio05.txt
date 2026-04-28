@@ -1,0 +1,280 @@
+===========================
+UNIDAD 9 – EJERCICIO 05
+Definición de flujo académico
+===========================
+
+Este ejercicio propone diseñar un flujo de trabajo para organizar
+el desarrollo de un proyecto académico usando colaboración,
+control de versiones y criterios formales de revisión.
+
+------------------------------------------------------------
+OBJETIVO DEL EJERCICIO
+------------------------------------------------------------
+
+Definir un flujo académico estructurado para un proyecto real,
+estableciendo participantes, etapas de trabajo, herramientas
+y criterios para liberar versiones.
+
+------------------------------------------------------------
+CASO PROPUESTO
+------------------------------------------------------------
+
+Proyecto ejemplo:
+
+Título:
+Detección de objetos mediante visión por computadora aplicada
+a un problema de investigación.
+
+Participantes:
+- Investigador principal
+- Coautor 1
+- Coautor 2
+- Estudiantes colaboradores
+- Revisor interno
+
+------------------------------------------------------------
+1. ROLES DE LOS PARTICIPANTES
+------------------------------------------------------------
+
+Investigador principal
+----------------------
+Responsable de:
+
+- Definir objetivos.
+- Coordinar el proyecto.
+- Aprobar cambios mayores.
+- Integrar la versión final.
+- Autorizar envío del manuscrito.
+
+Coautores
+---------
+Responsables de:
+
+- Redacción de secciones.
+- Análisis de resultados.
+- Revisión técnica.
+- Corrección de observaciones.
+
+Estudiantes colaboradores
+-------------------------
+Responsables de:
+
+- Generar figuras.
+- Preparar experimentos.
+- Apoyar con bibliografía.
+- Documentar resultados parciales.
+
+Revisor interno
+---------------
+Responsable de:
+
+- Detectar inconsistencias.
+- Revisar estructura científica.
+- Verificar claridad del manuscrito.
+- Emitir observaciones antes del cierre.
+
+------------------------------------------------------------
+2. MOMENTOS DE EDICIÓN Y REVISIÓN
+------------------------------------------------------------
+
+Etapa 1: Planeación
+-------------------
+Se define:
+
+- Problema
+- Objetivos
+- Estructura del documento
+- Cronograma
+
+Versión generada:
+
+v0.1 borrador inicial
+
+------------------------------------------------------------
+
+Etapa 2: Escritura colaborativa
+-------------------------------
+
+Trabajo en Overleaf por secciones:
+
+- Introducción
+- Metodología
+- Resultados
+- Discusión
+
+Versiones sugeridas:
+
+v0.2
+v0.3
+v0.4
+
+Cada versión integra:
+
+- Nuevas figuras
+- Correcciones
+- Bibliografía actualizada
+
+------------------------------------------------------------
+
+Etapa 3: Revisión técnica
+-------------------------
+
+Revisión interna:
+
+- Coautores corrigen
+- Revisor valida
+- Ajustes metodológicos
+
+Versión:
+
+v0.9 pre-final
+
+------------------------------------------------------------
+
+Etapa 4: Cierre
+---------------
+
+Se congela contenido.
+
+Solo se permiten:
+
+- Correcciones menores
+- Formato
+- Estilo
+- Referencias
+
+Versión final:
+
+v1.0 envío
+
+------------------------------------------------------------
+3. HERRAMIENTAS UTILIZADAS
+------------------------------------------------------------
+
+Overleaf
+--------
+Uso para:
+
+- Escritura colaborativa
+- Compilación LaTeX
+- Comentarios
+- Control de cambios
+
+------------------------------------------------------------
+
+GitHub
+------
+Uso para:
+
+- Respaldo del proyecto
+- Historial de commits
+- Versiones etiquetadas
+- Gestión de ramas
+
+Ejemplo:
+
+main
+develop
+revision-reviewers
+
+------------------------------------------------------------
+
+Otras herramientas
+------------------
+
+Zotero / Mendeley
+- Gestión bibliográfica
+
+Google Drive / Nextcloud
+- Datos complementarios
+
+Trello / Notion
+- Seguimiento de tareas
+
+------------------------------------------------------------
+4. CRITERIOS PARA CERRAR VERSIONES
+------------------------------------------------------------
+
+Una versión se considera cerrada si cumple:
+
+[ ] Texto revisado por todos los autores
+
+[ ] Figuras aprobadas
+
+[ ] Referencias completas
+
+[ ] Resultados validados
+
+[ ] Sin errores de compilación
+
+[ ] Comentarios resueltos
+
+[ ] Commit etiquetado en GitHub
+
+Ejemplo de etiqueta:
+
+v1.0_submission
+
+------------------------------------------------------------
+FLUJO DE TRABAJO PROPUESTO
+------------------------------------------------------------
+
+Idea
+ ↓
+Planeación
+ ↓
+Borrador inicial
+ ↓
+Edición colaborativa
+ ↓
+Revisión interna
+ ↓
+Versión pre-final
+ ↓
+Cierre de versión
+ ↓
+Envío o publicación
+
+------------------------------------------------------------
+EJEMPLO DE COMMITS
+------------------------------------------------------------
+
+Commit 1
+Initial project structure
+
+Commit 2
+Added methodology draft
+
+Commit 3
+Updated experimental results
+
+Commit 4
+Internal review corrections
+
+Commit 5
+Version v1.0 ready for submission
+
+------------------------------------------------------------
+RESULTADO ESPERADO
+------------------------------------------------------------
+
+Flujo académico documentado que incluya:
+
+- Roles definidos
+- Etapas de edición
+- Revisión estructurada
+- Herramientas de colaboración
+- Criterios formales de cierre
+
+------------------------------------------------------------
+VENTAJAS DEL FLUJO PROPUESTO
+------------------------------------------------------------
+
+- Reduce errores.
+- Mejora coordinación.
+- Facilita reproducibilidad.
+- Permite trazabilidad.
+- Organiza versiones del proyecto.
+- Profesionaliza el trabajo académico.
+
+FIN DE LA SOLUCIÓN DEL EJERCICIO 05 – UNIDAD 9
