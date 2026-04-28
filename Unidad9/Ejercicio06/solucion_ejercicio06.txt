@@ -1,0 +1,185 @@
+===========================
+UNIDAD 9 – EJERCICIO 06
+Auditoría de proyecto (simulada)
+===========================
+
+Este ejercicio muestra cómo realizar una auditoría básica de
+reproducibilidad usando un proyecto LaTeX sencillo de prueba.
+
+------------------------------------------------------------
+OBJETIVO DEL EJERCICIO
+------------------------------------------------------------
+
+Aprender a evaluar si un proyecto LaTeX puede reproducirse
+correctamente desde cero e identificar posibles mejoras.
+
+------------------------------------------------------------
+PROYECTO DE PRUEBA PARA AUDITAR
+------------------------------------------------------------
+
+Crear primero un proyecto mínimo:
+
+Proyecto_Auditoria/
+
+  main.tex
+  referencias.bib
+  fig/
+      ejemplo.png
+
+------------------------------------------------------------
+Archivo main.tex
+------------------------------------------------------------
+
+\documentclass{article}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+
+\title{Proyecto para Auditoría}
+\author{Autor}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Introducción}
+
+Texto de prueba para verificar reproducibilidad.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=.4\textwidth]{fig/ejemplo.png}
+\caption{Figura de prueba}
+\end{figure}
+
+\end{document}
+
+------------------------------------------------------------
+SIMULACIÓN DE LA AUDITORÍA
+------------------------------------------------------------
+
+Paso 1
+------
+
+Compilar el proyecto una vez.
+
+Verificar que produce PDF correctamente.
+
+------------------------------------------------------------
+Paso 2
+------
+
+Eliminar archivos auxiliares:
+
+*.aux
+*.log
+*.out
+
+Puede hacerse con:
+
+latexmk -c
+
+------------------------------------------------------------
+Paso 3
+------
+
+Compilar nuevamente desde cero.
+
+Comprobar:
+
+[ ] El documento compila.
+
+[ ] La imagen aparece.
+
+[ ] No hay errores.
+
+------------------------------------------------------------
+Paso 4
+------
+
+Buscar posibles problemas simulados:
+
+Ejemplo A
+
+Renombra temporalmente:
+
+ejemplo.png
+
+como
+
+ejemplo2.png
+
+Compila.
+
+Observa el error:
+
+File not found
+
+Conclusión:
+Faltan dependencias si archivos no están incluidos.
+
+------------------------------------------------------------
+Ejemplo B
+---------
+
+Eliminar una línea:
+
+\usepackage{graphicx}
+
+Intentar compilar.
+
+Observar error.
+
+Conclusión:
+Los paquetes requeridos deben documentarse.
+
+------------------------------------------------------------
+HALLAZGOS DE LA AUDITORÍA
+------------------------------------------------------------
+
+Se detectó que para reproducir el proyecto se necesita:
+
+- Archivo principal main.tex
+- Imagen incluida
+- Paquete graphicx
+- Compilador LaTeX
+
+Todo ello debe acompañar al proyecto.
+
+------------------------------------------------------------
+ACCIONES DE MEJORA
+------------------------------------------------------------
+
+Agregar:
+
+1. README con instrucciones.
+
+2. Archivo .gitignore
+
+3. Lista de paquetes requeridos.
+
+4. Versionar todos los recursos en GitHub.
+
+------------------------------------------------------------
+CHECKLIST FINAL
+------------------------------------------------------------
+
+[X] Proyecto compila desde cero.
+
+[X] Dependencias identificadas.
+
+[X] Recursos incluidos.
+
+[X] Mejoras propuestas.
+
+------------------------------------------------------------
+RESULTADO ESPERADO
+------------------------------------------------------------
+
+Comprender cómo auditar reproducibilidad incluso
+sin disponer todavía de un proyecto grande.
+
+La idea es aprender el proceso de auditoría,
+no auditar un proyecto complejo real.
+
+FIN DE LA SOLUCIÓN DEL EJERCICIO 06 – UNIDAD 9
