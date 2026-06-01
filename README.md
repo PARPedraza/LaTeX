@@ -73,11 +73,11 @@ Este repositorio tiene como finalidad proporcionar material complementario desca
 
 ---
 
-## Autor
+## Autores
 
 **Dr. Pedro Alfonso Ramírez Pedraza**
 
-Centro de Investigación en Óptica, A.C.
+Instituto Politécnico Nacional - CICATA Unidad Qro.
 
 Líneas de investigación:
 
