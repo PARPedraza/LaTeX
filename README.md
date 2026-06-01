@@ -87,6 +87,19 @@ Líneas de investigación:
 - Ciencia de Datos
 - Procesamiento de Imágenes 2D y 3D
 
+**Dr. Raymundo Ramírez Pedraza**
+
+Facultad de Contabilidad y administración - Universidad Autónoma de Querétaro
+
+Líneas de investigación:
+
+- Neurociencias
+- Aprendizaje
+- Gamificación
+- Ciencia de Datos
+- Inteligencia Artificial
+- Sistemas Cognitivos Bioinspirados
+
 ---
 
 ## Licencia
